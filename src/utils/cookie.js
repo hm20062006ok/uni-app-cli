@@ -27,10 +27,6 @@ function remove(key) {
 function clearAll() {
     const res = uni.getStorageInfoSync();
     res.keys.map((item) => {
-        //TODO 替换此处
-        // if (item == 'redirect' || item == 'spread') {
-        //     return
-        // }
         remove(item)
     })
 }

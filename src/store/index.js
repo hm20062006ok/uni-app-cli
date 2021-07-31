@@ -1,6 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import cookie from '@/utils/store/cookie'
+import cookie from '@/utils/cookie'
 import { getUserInfo } from '@/api/user'
 
 Vue.use(Vuex)
@@ -85,7 +85,7 @@ const vuexStore = new Vuex.Store({
         }
     },
     actions: {
-        getLocation({state, commit}, force) {
+        getLocation({ commit}) {
             uni.getLocation({
                 type: 'gcj02',
                 success: function (result) {
@@ -122,3 +122,5 @@ const vuexStore = new Vuex.Store({
     },
     strict: debug
 })
+
+export default vuexStore

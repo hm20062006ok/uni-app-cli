@@ -2,14 +2,14 @@
   import Vue from 'vue'
   import { getUserInfo } from "@/api/user"
   import { updateApplication } from "@/api/public";
-  import  { compareVersion }from '@/utils/index'
+  import  { compareVersion }from '@/utils'
 
 	export default {
 		onLaunch: function() {
-      console.log('onLaunch')
-      //#ifdef APP-PLUS
+      console.log('app onLaunch')
+      // #ifdef APP-PLUS
       this.checkUpdateApplication()
-      //#endif
+      // #endif
 
       //#ifdef MP
       this.checkUpdateMP()
@@ -45,6 +45,7 @@
         })
       },
 
+      // wgt 热更新
       checkUpdateApplication() {
         plus.runtime.getProperty(plus.runtime.appid, function(widgetInfo) {
           let req = {
@@ -53,11 +54,11 @@
             "versionCode": plus.runtime.versionCode,
             "type": plus.os.name === "iOS" ? 1102 : 1101,
           };
-          // console.log('req',req);
+          console.log('req',req);
           const thatWidgetInfo =  widgetInfo
           //TODO app整包更新
           updateApplication(req).then(res => {
-            // console.log('更新接口返回', res)
+            console.log('更新接口返回', res)
             if(res.data.versionName && compareVersion(res.data.versionName, thatWidgetInfo.version) > 0){
               // console.log('需要更新')
               if (res.data.downloadUrl) {
@@ -90,33 +91,46 @@
 
 		  // TODO： 获取不同平台状态栏，导航栏，高度
 		  setAppInfo(){
+        console.log('setAppInfo')
         let that = this;
         return new Promise((resolve, reject) => {
           uni.getSystemInfo({
             success: function(e) {
-              Vue.prototype.StatusBar = e.statusBarHeight;
+              //状态栏高度
+              Vue.prototype.$customStatusBarHeight = e.statusBarHeight
+
               // #ifdef H5
-              Vue.prototype.CustomBar = e.statusBarHeight + 45;
+              //导航栏高度
+              Vue.prototype.$customBarHeight = 48;
+              // 状态栏 + 导航栏高度
+              Vue.prototype.$topHeight = e.statusBarHeight + Vue.prototype.$customBarHeight;
               // #endif
 
               // #ifdef APP-PLUS
-              if (e.platform == "android") {
-                Vue.prototype.CustomBar = e.statusBarHeight + 50;
-                Vue.prototype.$customStatusBarHeight = e.statusBarHeight;
-                Vue.prototype.$customBarHeight = e.statusBarHeight + 10;
-              } else {
-                Vue.prototype.CustomBar = e.statusBarHeight + 45;
-                Vue.prototype.$customStatusBarHeight = e.statusBarHeight;
-                Vue.prototype.$customBarHeight = e.statusBarHeight + 10;
+              if (e.platform === "android") {
+                Vue.prototype.$customBarHeight = 48;
+                Vue.prototype.$topHeight = e.statusBarHeight + Vue.prototype.$customBarHeight
+              }else if( e.platform === 'ios'){
+                Vue.prototype.$customBarHeight = 44;
+                Vue.prototype.$topHeight = e.statusBarHeight + Vue.prototype.$customBarHeight
               }
               // #endif
 
               // #ifdef MP-WEIXIN
-              let custom = wx.getMenuButtonBoundingClientRect();
-              Vue.prototype.Custom = custom;
-              Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+              let rect = wx.getMenuButtonBoundingClientRect();
+              //状态栏高度
               Vue.prototype.$customStatusBarHeight = e.statusBarHeight;
-              Vue.prototype.$customBarHeight = (custom.top - e.statusBarHeight) * 2 + custom.height;
+              // 导航栏高度： Android/其他平台
+              //                                      胶囊与状态栏间隔           * 2 + 胶囊高度
+              Vue.prototype.$customBarHeight = (rect.top - e.statusBarHeight) * 2 + rect.height;
+              if(e.platform === 'ios'){
+                // iOS平台有误差
+                Vue.prototype.$customBarHeight = Vue.prototype.$customBarHeight + 4;
+              }
+              // #endif
+
+              // #ifdef H5
+              // TODO
               // #endif
             },
           });
@@ -126,11 +140,11 @@
   }
 </script>
 
-<style lang="less">
+<style lang="scss">
 	/*每个页面公共css */
-  @import "./assets/iconfont/iconfont.css";
+  //@import "./assets/iconfont/iconfont.css";
   // todo 清理base.less 中无用资源
-  @import "./assets/css/base.less";
-  @import "./assets/css/reset.less";
-  @import "./assets/css/style.less";
+  //@import "./assets/css/base.less";
+  //@import "./assets/css/reset.less";
+  @import "./assets/css/style.scss";
 </style>

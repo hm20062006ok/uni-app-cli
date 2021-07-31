@@ -1,3 +1,6 @@
+const TransformPages = require('uni-read-pages')
+const {webpack} = new TransformPages()
+
 const platforms = Object.freeze({
     APP_PLUS: 'app-plus',
     MP_360: 'mp-360',
@@ -12,6 +15,8 @@ const platforms = Object.freeze({
     QUICKAPP_WEBVIEW_HUAWEI: 'quickapp-webview-huawei',
     QUICKAPP_WEBVIEW_UNION: 'quickapp-webview-union'
 })
+
+
 module.exports = {
     pluginOptions: {
         thirdDevToolsConfig: [
@@ -28,6 +33,18 @@ module.exports = {
                 targetBuildPlatform: platforms.MP_QQ,
                 execPath: '/Applications/qqdevtools.app/Contents/MacOS/',
             }
+        ]
+    },
+    configureWebpack: {
+        plugins: [
+            new webpack.DefinePlugin({
+                ROUTES: webpack.DefinePlugin.runtimeValue(() => {
+                    const tfPages = new TransformPages({
+                        includes: ['path', 'name', 'aliasPath']
+                    });
+                    return JSON.stringify(tfPages.routes)
+                }, true )
+            })
         ]
     }
 }

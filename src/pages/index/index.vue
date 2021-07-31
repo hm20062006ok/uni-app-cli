@@ -15,7 +15,9 @@
 			}
 		},
 		onLoad() {
-
+      console.log(this.$Route)
+      console.log(this.$Router)
+		  debugger
 		},
 		methods: {
 

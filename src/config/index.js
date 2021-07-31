@@ -8,4 +8,3 @@ export const VUE_APP_API_URL = 'https://xjypshop.com/api';
 // export const VUE_APP_API_URL = 'http://192.168.3.2:8515/api';
 //export const VUE_APP_API_URL = 'http://127.0.0.1:8515/api';
 // export const VUE_APP_API_URL = 'http://192.168.0.184:8515/api';
-export const VUE_APP_RESOURCES_URL = 'https://wx.yixiang.co/static'

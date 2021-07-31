@@ -12,9 +12,8 @@ import Fly from 'flyio/dist/npm/wx';
 import Fly from 'flyio/dist/npm/wx';
 // #endif
 
-import store from '@/utils/store'
-import {VUE_APP_API_URL} from '@/config';
-import cookie from '@/utils/store/cookie'
+import { VUE_APP_API_URL } from '@/config';
+import cookie from '@/utils/cookie'
 // import { handleLoginFailure, getCurrentPageUrl } from "@/utils";
 import { mergeObjWithoutOverwriting, handleLoginFailure } from '@/utils'
 
