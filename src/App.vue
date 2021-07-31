@@ -96,14 +96,16 @@
         return new Promise((resolve, reject) => {
           uni.getSystemInfo({
             success: function(e) {
+              debugger
               //状态栏高度
               Vue.prototype.$customStatusBarHeight = e.statusBarHeight
 
               // #ifdef H5
               //导航栏高度
               Vue.prototype.$customBarHeight = 48;
+              Vue.prototype.$customStatusBarHeight = 14;
               // 状态栏 + 导航栏高度
-              Vue.prototype.$topHeight = e.statusBarHeight + Vue.prototype.$customBarHeight;
+              Vue.prototype.$topHeight = Vue.prototype.$customStatusBarHeight + Vue.prototype.$customBarHeight;
               // #endif
 
               // #ifdef APP-PLUS
@@ -118,8 +120,6 @@
 
               // #ifdef MP-WEIXIN
               let rect = wx.getMenuButtonBoundingClientRect();
-              //状态栏高度
-              Vue.prototype.$customStatusBarHeight = e.statusBarHeight;
               // 导航栏高度： Android/其他平台
               //                                      胶囊与状态栏间隔           * 2 + 胶囊高度
               Vue.prototype.$customBarHeight = (rect.top - e.statusBarHeight) * 2 + rect.height;
@@ -146,5 +146,5 @@
   // todo 清理base.less 中无用资源
   //@import "./assets/css/base.less";
   //@import "./assets/css/reset.less";
-  @import "./assets/css/style.scss";
+  @import "@/style/index.scss";
 </style>

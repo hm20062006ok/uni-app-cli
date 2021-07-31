@@ -1,5 +1,5 @@
 const homeRouter = {
-    path: '/pages/index/index',
+    path: '/pages/home/index',
     aliasPath: "/",
     name: 'home',
     meta: {

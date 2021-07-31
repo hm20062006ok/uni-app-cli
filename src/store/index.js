@@ -15,7 +15,7 @@ const vuexStore = new Vuex.Store({
         token: cookie.get(loginKey) | null,
         userInfo: cookie.get('userInfo'),
         phone: cookie.get('phone'),
-        $deviceType: null,
+        deviceType: null,
         location: {
             latitude: '',
             longitude: ''
@@ -69,8 +69,8 @@ const vuexStore = new Vuex.Store({
         updateAuthorization(state, isAuthorization) {
             state.isAuthorization = isAuthorization;
         },
-        updateDevicetype(state, $deviceType) {
-            state.$deviceType = $deviceType;
+        'UPDATE_DEVICE_TYPE': (state, deviceType) => {
+            state.deviceType = deviceType;
         },
         setLocation(state, location) {
             state.location = location
@@ -118,6 +118,9 @@ const vuexStore = new Vuex.Store({
                     })
                 })
             })
+        },
+        updateDeviceType({ commit },  deviceType ) {
+            commit('UPDATE_DEVICE_TYPE', deviceType)
         }
     },
     strict: debug

@@ -1,0 +1,5 @@
+import Vue from 'vue'
+import CustomNavbar from 'components/CustomNavbar/CustomNavbar'
+// register globally
+Vue.component('custom-navbar', CustomNavbar)
+// console.log('load components index.js')
