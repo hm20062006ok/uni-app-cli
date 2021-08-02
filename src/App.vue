@@ -89,14 +89,15 @@
         });
       },
 
-		  // TODO： 获取不同平台状态栏，导航栏，高度
 		  setAppInfo(){
         console.log('setAppInfo')
         let that = this;
         return new Promise((resolve, reject) => {
           uni.getSystemInfo({
             success: function(e) {
-              debugger
+
+              Vue.prototype.$windowWidth = e.windowWidth;
+
               //状态栏高度
               Vue.prototype.$customStatusBarHeight = e.statusBarHeight
 
@@ -142,9 +143,5 @@
 
 <style lang="scss">
 	/*每个页面公共css */
-  //@import "./assets/iconfont/iconfont.css";
-  // todo 清理base.less 中无用资源
-  //@import "./assets/css/base.less";
-  //@import "./assets/css/reset.less";
   @import "@/style/index.scss";
 </style>

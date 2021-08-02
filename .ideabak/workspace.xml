@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e49a65db-4439-4b0d-9a0d-f90dc0fdc919" name="Default Changelist" comment="基础样式">
+      <change afterPath="$PROJECT_DIR$/src/components/xjyp/xjyp-banner/xjyp-banner.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/components/CategoryTabsComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/components/DuiHuanPinPaiZhiBo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/images/bg_discout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/images/icon_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/images/icon_purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/images/icon_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/mock/banner1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/mock/banner@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/iconfont/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bak.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/xjyp/xjyp-custom-navbar/xjyp-custom-navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/xjyp/xjyp-custom-navbar/xjyp-custom-navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9e053257-eef9-44c7-90e7-100d5b63766e" />
+        <option name="url" value="git@github.com:hm20062006ok/uni-app-cli.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="1uZPAGwyRh8yPAJ3gwfmYwaupeU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/static/images" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.22068965" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/static/images" />
+      <recent name="$PROJECT_DIR$/src/static/mock" />
+      <recent name="$PROJECT_DIR$/src/style" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/static/tabIcons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/xjyp" />
+      <recent name="$PROJECT_DIR$/src/components/CustomNavbar" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/icons/svg" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev:h5">
+    <configuration name="localhost:8080" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/">
+      <method v="2" />
+    </configuration>
+    <configuration name="build:app-plus" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:app-plus" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v12.22.1/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build:h5" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:h5" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev:app-plus" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev:app-plus" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v12.22.1/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev:h5" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev:h5" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev:mp-weixin" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev:mp-weixin" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v12.22.1/bin/node" />
+      <package-manager value="yarn" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev:h5" />
+        <item itemvalue="npm.dev:app-plus" />
+        <item itemvalue="JavaScript Debug.localhost:8080" />
+        <item itemvalue="npm.build:h5" />
+        <item itemvalue="npm.build:app-plus" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e49a65db-4439-4b0d-9a0d-f90dc0fdc919" name="Default Changelist" comment="" />
+      <created>1624870002498</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624870002498</updated>
+      <workItem from="1624870018789" duration="4582000" />
+      <workItem from="1624875506965" duration="262000" />
+      <workItem from="1624876017513" duration="191000" />
+      <workItem from="1624928946495" duration="644000" />
+      <workItem from="1624929818703" duration="230000" />
+      <workItem from="1626329801503" duration="30000" />
+      <workItem from="1627022928873" duration="7570000" />
+      <workItem from="1627088808096" duration="25103000" />
+      <workItem from="1627261871127" duration="2832000" />
+      <workItem from="1627268877458" duration="4476000" />
+      <workItem from="1627440429014" duration="8419000" />
+      <workItem from="1627609851740" duration="16000" />
+      <workItem from="1627610073148" duration="52700000" />
+      <workItem from="1627888040399" duration="208000" />
+      <workItem from="1627888395472" duration="101000" />
+      <workItem from="1627888527593" duration="66000" />
+    </task>
+    <task id="LOCAL-00001" summary="路由">
+      <created>1627703968092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1627703968092</updated>
+    </task>
+    <task id="LOCAL-00002" summary="基础样式">
+      <created>1627727555946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1627727555947</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="路由" />
+    <MESSAGE value="基础样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="基础样式" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

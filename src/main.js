@@ -23,7 +23,6 @@ Object.keys(filters).forEach(key => {
 })
 
 
-//TODO mixins onLoad()  loading
 Vue.prototype.$VUE_APP_API_URL = VUE_APP_API_URL
 Vue.config.productionTip = false
 Vue.config.devtools = process.env.NODE_ENV !== "production";
@@ -31,14 +30,19 @@ Vue.prototype.$platform = uni.getSystemInfoSync().platform
 
 App.mpType = 'app'
 
+Vue.prototype.$urlKey = 'url'
+
+
 // #ifdef APP-PLUS
 Vue.prototype.$deviceType = 'appPlus'
+Vue.prototype.$urlKey = 'uniapp_url'
 store.dispatch('updateDeviceType', 'appPlus')
 console.log(Vue.prototype.$platform)
 // #endif
 
 // #ifdef MP-WEIXIN
 Vue.prototype.$deviceType = 'mpWeixin'
+Vue.prototype.$urlKey = 'wxapp_url'
 store.dispatch('updateDeviceType', 'mpWeixin')
 // #endif
 
@@ -49,9 +53,9 @@ Vue.mixin({
     });
   },
   onReady() {
-    setTimeout(function () {
+    // setTimeout(function () {
       uni.hideLoading();
-    }, 2000);
+    // }, 2000);
   }
 })
 
