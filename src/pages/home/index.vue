@@ -7,15 +7,18 @@
     <view>
       <category-tabs-component :content="content"></category-tabs-component>
     </view>
-    <duihuan-pinpai-zhibo  :detail="duihuan"></duihuan-pinpai-zhibo>
+<!--    <duihuan-pinpai-zhibo  :detail="duihuan"></duihuan-pinpai-zhibo>-->
+    <dui-huan-zhi-bo-pin-pai :detail="duihuan"></dui-huan-zhi-bo-pin-pai>
     <view>
       <category-tabs-component :content="content1"></category-tabs-component>
     </view>
     <view>
       <category-tabs-component :content="content1"></category-tabs-component>
     </view>
-    <view>
-      <category-tabs-component :content="content1"></category-tabs-component>
+
+    <!-- 今日推荐 -->
+    <view >
+      <today-recommend :newsData="firstList"> </today-recommend>
     </view>
   </view>
 </template>
@@ -24,16 +27,88 @@
 import XjypCustomNavbar from "@/components/xjyp/xjyp-custom-navbar/xjyp-custom-navbar";
 import XjypBanner from "@/components/xjyp/xjyp-banner/xjyp-banner";
 import CategoryTabsComponent from "@/pages/home/components/CategoryTabsComponent";
+import DuiHuanZhiBoPinPai from "@/pages/home/components/DuiHuanZhiBoPinPai";
+import TodayRecommend from "@/pages/home/components/TodayRecommend";
 
 export default {
-  components: {CategoryTabsComponent, XjypBanner, XjypCustomNavbar},
+  components: {TodayRecommend, DuiHuanZhiBoPinPai, CategoryTabsComponent, XjypBanner, XjypCustomNavbar},
   data() {
     return {
       navBarBgColor: 'transparent',
       navBarTextColor: 'white',
-      duihuan: [
-
+      firstList: [
+        {
+          image: '/static/mock/1024.png',
+          storeName: 'iPhone 12 Pro Max',
+          vipPrice: 9999,
+          price: 999,
+        },
+        {
+          image: '/static/mock/1024.png',
+          storeName: 'iPhone 12 Pro Max',
+          vipPrice: 9999,
+          price: 999,
+        },
+        {
+          image: '/static/mock/1024.png',
+          storeName: 'iPhone 12 Pro Max',
+          vipPrice: 9999,
+          price: 999,
+        },
+        {
+          image: '/static/mock/1024.png',
+          storeName: 'iPhone 12 Pro Max',
+          vipPrice: 9999,
+          price: 999,
+        },
+        {
+          image: '/static/mock/1024.png',
+          storeName: 'iPhone 12 Pro Max',
+          vipPrice: 9999,
+          price: 999,
+        }
       ],
+      duihuan: [
+      {
+        imageArr: [
+          {
+            imgUrl:'/static/mock/duihuan@2x.png',
+            url:'/pages/shop/GoodsList/index',
+            wxapp_url:'/pages/shop/duihuan/index',
+            uniapp_url:'/pages/shop/duihuan/index'
+          }
+        ],
+        name: '兑换专区'
+      },
+      {
+        imageArr: [
+          {
+            imgUrl:'/static/mock/zhanlue@2x.png',
+            url:'/pages/shop/GoodsCon/index?id=1051',
+            wxapp_url:'/pages/shop/GoodsCon/index?id=1051',
+            uniapp_url:'/pages/shop/GoodsCon/index?id=1051'
+          },
+          {
+            imgUrl:'/static/mock/live@2x.png',
+            url:'/pages/shop/Live/LiveList/index',
+            wxapp_url:'/pages/shop/Live/LiveList/index',
+            uniapp_url:'/pages/shop/Live/LiveList/index'
+          }
+        ],
+        name: '战略品牌'
+      },
+      {
+        imageArr: [
+          {
+            imgUrl:'/static/mock/live@2x.png',
+            url:'/pages/shop/GoodsList/index',
+            wxapp_url:'/pages/shop/Live/LiveList/index',
+            uniapp_url:'/pages/shop/Live/LiveList/index'
+          }
+        ],
+        name: '湘济直播'
+      }
+    ],
       content: {
         type: 'large',
         bgColor: '#9C93C0',

@@ -1,10 +1,11 @@
 import {RouterMount, createRouter} from 'uni-simple-router';
 import home from './home'
 import user from './user'
-console.log('platform', process.env.VUE_APP_PLATFORM)
+import shop from './shop'
+
 const router = createRouter({
     platform: process.env.VUE_APP_PLATFORM,
-    routes: [home, user]
+    routes: [home, user,shop]
 });
 //全局路由前置守卫
 router.beforeEach((to, from, next) => {

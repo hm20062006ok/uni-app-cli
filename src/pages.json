@@ -32,6 +32,10 @@
 		{
 			"path": "pages/user/index"
 
+		},
+		{
+			"path": "pages/shop/index"
+
 		}
 	],
 	"globalStyle": {
@@ -62,6 +66,12 @@
 			},
 			{
 				"pagePath": "pages/user/index",
+				"iconPath": "static/tabIcons/my-off@2x.png",
+				"selectedIconPath": "static/tabIcons/my-on@2x.png",
+				"text": "我的"
+			},
+			{
+				"pagePath": "pages/shop/index",
 				"iconPath": "static/tabIcons/my-off@2x.png",
 				"selectedIconPath": "static/tabIcons/my-on@2x.png",
 				"text": "我的"
