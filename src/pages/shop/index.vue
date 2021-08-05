@@ -1,17 +1,21 @@
 <template>
   <view class="container">
-    <car-list ref="mycar" :carList="carList" @allSelBtn="allSelBtn" @selShop="selShop" @selGoods="selGoods"
-              @jsbtn="jsbtn" @delbtn="delbtn" @changeNum="changeNum"></car-list>
+    <xjyp-checkbox v-model="checked"></xjyp-checkbox>
+    <xjyp-number-input v-model="itemCounts" :max="99"></xjyp-number-input>
+    {{ itemCounts}}
   </view>
 </template>
 <script>
-import CarList from "@/components/car-list/car-list";
 
+
+import XjypNumberInput from "@/components/xjyp/xjyp-number-input/xjyp-number-input";
 export default {
   name: "index",
-  components: {CarList},
+  components: {XjypNumberInput},
   data() {
     return {
+      itemCounts: 5,
+      checked: false,
       maskTitle: '',
       carList: [
         {
@@ -91,6 +95,13 @@ export default {
 
   },
   methods: {
+    change() {
+      this.checked = !this.checked
+      // debugger
+      // console.log('checkboxChange')
+      // console.log(event)
+      // this.checked = event
+    },
     confirm: function () {//确定按钮
       console.log('您点击了确定按钮');
     }
@@ -175,19 +186,22 @@ export default {
 </script>
 
 <style scoped>
-page{
+page {
   background: #f5f5f5;
 }
-view,textarea,input,text,button{
+
+view, textarea, input, text, button {
   padding: 0;
   margin: 0;
-  box-sizing:border-box;
-  font-size: 28rpx;
+  box-sizing: border-box;
+  font-size: 28 rpx;
   font-family: "微软雅黑";
 }
-.uni-checkbox-input{
+
+.uni-checkbox-input {
   border-radius: 50% !important;
 }
+
 .container {
   height: 100%;
   display: flex;
@@ -198,7 +212,8 @@ view,textarea,input,text,button{
   background: #f5f5f5;
   overflow: hidden;
 }
-.line1{
+
+.line1 {
   overflow: hidden;
   text-overflow: ellipsis;
   display: box;
@@ -209,6 +224,7 @@ view,textarea,input,text,button{
   -webkit-box-orient: vertical;
   word-break: break-all; /* 英文换行问题 */
 }
+
 .line2 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -220,14 +236,16 @@ view,textarea,input,text,button{
   -webkit-box-orient: vertical;
   word-break: break-all; /* 英文换行问题 */
 }
+
 .centerboth {
-  display:flex;
+  display: flex;
   display: -webkit-flex;
-  align-items:center;
-  -webkit-align-items:center;
+  align-items: center;
+  -webkit-align-items: center;
   justify-content: center;
   -webkit-justify-content: center;
 }
+
 .clearfix:after {
   content: "";
   display: block;
@@ -239,22 +257,29 @@ view,textarea,input,text,button{
 .clearfix {
   zoom: 1;
 }
-image{
+
+image {
   padding: 0;
   margin: 0;
 }
+
 textarea {
-  width:300rpx;
-  height:75rpx;
-  display:block;
-  position:relative;
-  font-size: 28rpx;
+  width: 300 rpx;
+  height: 75 rpx;
+  display: block;
+  position: relative;
+  font-size: 28 rpx;
 }
-button::after{ border: none; }
+
+button::after {
+  border: none;
+}
+
 input:-ms-input-placeholder {
   color: #808080;
 }
-car-list{
+
+car-list {
   width: 100%;
 }
 </style>

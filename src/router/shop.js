@@ -3,7 +3,7 @@ const shopRouter = {
     aliasPath: "/pages/shop/index",
     name: 'shop',
     meta: {
-        title: '购物',
+        title: '购物车',
     }
 }
 
