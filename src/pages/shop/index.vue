@@ -1,17 +1,40 @@
 <template>
   <view class="container">
-    <xjyp-checkbox v-model="checked"></xjyp-checkbox>
-    <xjyp-number-input v-model="itemCounts" :max="99"></xjyp-number-input>
-    {{ itemCounts}}
+    <view>
+      总价： {{ total }}
+    </view>
+    <view class="store-list">
+      <view class="store-item" v-for="(shop, index) in carList" :key="index">
+      <view class="store-item-head">
+        <xjyp-checkbox v-model="shop.selected"></xjyp-checkbox>
+        <view>Icon</view>
+        <text> {{ shop.title}}</text>
+      </view>
+      <view class="store-item-product-list">
+        <view class="product-item" v-for="(good, shopIndex) in shop.glist" :key="shopIndex">
+          <xjyp-checkbox v-model="good.selected"></xjyp-checkbox>
+          <view class="product-pic">
+          </view>
+          <view class="product-item-right">
+            <view> {{good.name}}</view>
+            <view>  {{good.spec_key_name}}</view>
+            <view class="product-item-right-bottom">
+              <view class="flex-start">￥ {{good.price * good.number}}</view>
+              <view class="flex-end">
+                <xjyp-number-input v-model="good.number" :max="99" :min="1"></xjyp-number-input>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
   </view>
 </template>
 <script>
-
-
-import XjypNumberInput from "@/components/xjyp/xjyp-number-input/xjyp-number-input";
 export default {
   name: "index",
-  components: {XjypNumberInput},
+  components: {},
   data() {
     return {
       itemCounts: 5,
@@ -91,8 +114,21 @@ export default {
       ]
     }
   },
-  onLoad() {
-
+  computed:{
+    total(){
+      return this.carList.reduce((sum, shop) => {
+        if (shop.selected) {
+          let shopAmount = shop.glist.reduce((shopSum, product) => {
+            if (product.selected){
+              return shopSum + product.price * product.number
+            }
+            return shopSum
+          }, 0)
+          return sum + shopAmount
+        }
+        return sum
+      },0)
+    }
   },
   methods: {
     change() {
@@ -173,8 +209,7 @@ export default {
       that.carList = carList;
       that.$refs.mycar.getAllMount(carList);//计算价格展示
     }
-  }
-  ,
+  },
   onReachBottom() {
 
   }
@@ -185,101 +220,51 @@ export default {
 }
 </script>
 
-<style scoped>
-page {
-  background: #f5f5f5;
-}
-
-view, textarea, input, text, button {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-size: 28 rpx;
-  font-family: "微软雅黑";
-}
-
-.uni-checkbox-input {
-  border-radius: 50% !important;
-}
-
-.container {
-  height: 100%;
+<style rel="stylesheet/scss" lang="scss" scoped>
+.store-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  background: #f5f5f5;
-  overflow: hidden;
-}
 
-.line1 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: box;
-  display: -webkit-box;
-  line-clamp: 1;
-  box-orient: vertical;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  word-break: break-all; /* 英文换行问题 */
-}
+  .store-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 15rpx;
+    background-color: white;
+    margin-bottom: 20rpx;
 
-.line2 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: box;
-  display: -webkit-box;
-  line-clamp: 2;
-  box-orient: vertical;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  word-break: break-all; /* 英文换行问题 */
-}
+    .store-item-head {
+      display: flex;
+    }
 
-.centerboth {
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
-}
+    .store-item-product-list {
+      display: flex;
+      flex-direction: column;
 
-.clearfix:after {
-  content: "";
-  display: block;
-  visibility: hidden;
-  height: 0;
-  clear: both;
-}
+      .product-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 30rpx;
+        height: 400rpx;
+        background-color: #e3e3e3;
+        border-bottom: 1px solid #FFFFFF;
 
-.clearfix {
-  zoom: 1;
-}
-
-image {
-  padding: 0;
-  margin: 0;
-}
-
-textarea {
-  width: 300 rpx;
-  height: 75 rpx;
-  display: block;
-  position: relative;
-  font-size: 28 rpx;
-}
-
-button::after {
-  border: none;
-}
-
-input:-ms-input-placeholder {
-  color: #808080;
-}
-
-car-list {
-  width: 100%;
+        .product-pic {
+          width: 150rpx;
+          height: 150rpx;
+          background-color: red;
+        }
+        .product-item-right {
+          display: flex;
+          flex-direction: column;
+        }
+        .product-item-right-bottom{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
 }
 </style>
