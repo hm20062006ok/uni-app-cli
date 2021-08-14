@@ -59,6 +59,7 @@ export default {
         return
       }
       this.$emit('update:value', value)
+      this.$emit('onIncrease', value)
     },
     decrease(){
       let value = this.forInputValue - 1
@@ -67,6 +68,7 @@ export default {
         return
       }
       this.$emit('update:value', this.forInputValue - 1)
+      this.$emit('onDecrease', this.forInputValue - 1)
     }
   }
 }

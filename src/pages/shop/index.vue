@@ -12,19 +12,24 @@
         </view>
         <view class="store-item-product-list">
           <view class="product-item" v-for="(good, shopIndex) in shop.glist" :key="shopIndex">
-            <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
-            <view class="product-pic">
-            </view>
-            <view class="product-item-right">
-              <view> {{ good.name }}</view>
-              <view> {{ good.spec_key_name }}</view>
-              <view class="product-item-right-bottom">
-                <view class="flex-start">￥ {{ good.price * good.number }}</view>
-                <view class="flex-end">
-                  <xjyp-number-input v-model="good.number" :max="99" :min="1"></xjyp-number-input>
+            <del_slide-left :item="good"  :data_transit="{index:shopIndex,item:good}"  @delItem="delItem(index, shopIndex)" style="width: 100%">
+              <view style="width: 100%">
+                <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
+                <view class="product-pic">
+                </view>
+                <view class="product-item-right">
+                  <view> {{ good.name }}</view>
+                  <view> {{ good.spec_key_name }}</view>
+                  <view class="product-item-right-bottom">
+                    <view class="flex-start">￥ {{ good.price }}</view>
+                    <view class="flex-end">
+                      <xjyp-number-input v-model="good.number" :max="99" :min="1" @onIncrease="increase($event)" @onDecrease="decrease($event)"></xjyp-number-input>
+                    </view>
+                  </view>
                 </view>
               </view>
-            </view>
+            </del_slide-left>
+
           </view>
         </view>
       </view>
@@ -32,9 +37,10 @@
   </view>
 </template>
 <script>
+import Del_slideLeft from "@/components/ay-operate/del_slideLeft";
 export default {
   name: "index",
-  components: {},
+  components: {Del_slideLeft},
   data() {
     return {
       carList: [
@@ -108,7 +114,7 @@ export default {
             }
           ]
         }
-      ]
+      ],
     }
   },
   computed: {
@@ -129,6 +135,20 @@ export default {
   },
 
   methods: {
+    delItem(index, shopIndex){
+      console.log(index, shopIndex)
+      this.carList[index].glist.splice(shopIndex, 1)
+      console.log('delItem')
+      this.$nextTick(function () {
+        console.log('nextTick')
+      })
+    },
+    decrease(count){
+      console.log('decrease',count)
+    },
+    increase(count){
+      console.log('increase',count)
+    },
     shopChange(allSelected, shop) {
       shop.glist.map(item => {
         item.selected = allSelected
@@ -170,24 +190,26 @@ export default {
         background-color: #e3e3e3;
         border-bottom: 1px solid #FFFFFF;
 
-        .product-pic {
-          width: 150rpx;
-          height: 150rpx;
-          background-color: red;
-        }
 
-        .product-item-right {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .product-item-right-bottom {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-        }
       }
     }
   }
+}
+
+.product-pic {
+  width: 150rpx;
+  height: 150rpx;
+  background-color: red;
+}
+
+.product-item-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item-right-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 </style>
