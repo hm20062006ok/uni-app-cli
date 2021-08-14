@@ -25,6 +25,7 @@ export default {
   methods: {
     checkboxChange(){
       this.$emit('update:checked', !this.shouldChecked)
+      this.$emit('onChange', !this.shouldChecked)
     }
   }
 }
