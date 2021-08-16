@@ -46,7 +46,13 @@ export default {
   components: {Del_slideLeft},
   data() {
     return {
-      carList: [
+      carList: [],
+    }
+  },
+  mounted() {
+    let that = this
+    setTimeout(function (){
+      that.carList = [
         {
           shopId: 1,
           title: "天猫超市",
@@ -117,15 +123,8 @@ export default {
             }
           ]
         }
-      ],
-    }
-  },
-  mounted() {
-    let that = this
-    // setTimeout(function (){
-    //   that.carList = [
-    //    ]
-    // }, 5000)
+      ]
+    }, 5000)
   },
   computed: {
     count(){
@@ -140,7 +139,7 @@ export default {
     },
     total() {
       return this.carList.reduce((sum, shop) => {
-        if (shop.selected) {
+        // if (shop.selected) {
           let shopAmount = shop.glist.reduce((shopSum, product) => {
             if (product.selected) {
               return shopSum + product.price * product.number
@@ -148,7 +147,7 @@ export default {
             return shopSum
           }, 0)
           return sum + shopAmount
-        }
+        // }
         return sum
       }, 0)
     },
