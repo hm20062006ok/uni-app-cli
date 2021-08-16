@@ -2,6 +2,7 @@
   <view class="container">
     <view>
       总价： {{ total }}
+      总数： {{ count }}
       <xjyp-checkbox v-model="allShopSelected" @onChange="onAllShopSelected($event)">全选</xjyp-checkbox>
     </view>
     <view class="store-list">
@@ -127,6 +128,16 @@ export default {
     // }, 5000)
   },
   computed: {
+    count(){
+      return this.carList.reduce((sum, shop) => {
+        return sum + shop.glist.reduce((shopCount, item) => {
+          if (item.selected) {
+            return shopCount + item.number
+          }
+          return shopCount
+        }, 0)
+      }, 0)
+    },
     total() {
       return this.carList.reduce((sum, shop) => {
         if (shop.selected) {
