@@ -2,11 +2,12 @@
   <view class="container">
     <view>
       总价： {{ total }}
+      <xjyp-checkbox v-model="allShopSelected" @onChange="onAllShopSelected($event)">全选</xjyp-checkbox>
     </view>
     <view class="store-list">
       <view class="store-item" v-for="(shop, index) in carList" :key="index">
         <view class="store-item-head">
-          <xjyp-checkbox v-model="shop.selected" @onChange="shopChange($event, shop)"></xjyp-checkbox>
+          <xjyp-checkbox  v-model="shop.selected" @onChange="shopChange($event, shop)"></xjyp-checkbox>
           <view>Icon</view>
           <text> {{ shop.title }}</text>
         </view>
@@ -44,6 +45,13 @@ export default {
   data() {
     return {
       carList: [
+      ],
+    }
+  },
+  mounted() {
+    let that = this
+    setTimeout(function (){
+      that.carList = [
         {
           shopId: 1,
           title: "天猫超市",
@@ -62,7 +70,7 @@ export default {
               price: 19,
               number: 1,
               stock: 193,
-              selected: true,
+              selected: false,
             },
             {
               id: 237,
@@ -83,7 +91,7 @@ export default {
           shopId: 2,
           title: "京东超市",
           total: 11,
-          selected: true,
+          selected: false,
           goodsAmount: 6051,
           glist: [
             {
@@ -97,7 +105,7 @@ export default {
               price: 3,
               number: 10,
               stock: 78,
-              selected: true,
+              selected: false,
             },
             {
               id: 235,
@@ -110,12 +118,11 @@ export default {
               price: 1,
               number: 1,
               stock: 97,
-              selected: true,
+              selected: false,
             }
           ]
-        }
-      ],
-    }
+        }]
+    }, 5000)
   },
   computed: {
     total() {
@@ -131,17 +138,45 @@ export default {
         }
         return sum
       }, 0)
+    },
+    allShopSelected:{
+      get(){
+        if(this.carList.length <= 0){
+          return false
+        }
+        return this.carList.every(shop => {
+          return shop.glist.every(item => {
+            return item.selected
+          })
+        })
+      },
+      set(value){
+
+      }
     }
   },
-
   methods: {
-    delItem(index, shopIndex){
-      console.log(index, shopIndex)
-      this.carList[index].glist.splice(shopIndex, 1)
-      console.log('delItem')
-      this.$nextTick(function () {
-        console.log('nextTick')
+    onAllShopSelected(value){
+      console.log('allShopSelected',value)
+      this.carList.map(shop =>{
+        shop.selected = value
+        shop.glist.map(item => {
+          item.selected = value
+        })
       })
+    },
+    delItem(index, shopIndex){
+      //删除当前项
+      this.carList[index].glist.splice(shopIndex, 1)
+      //改变当前店铺选中状态
+      this.carList[index].selected = this.carList[index].glist.some(product => {
+        return product.selected
+      })
+      //当前店铺商品被删空时删除当前店铺
+      if(this.carList[index].glist.length <= 0){
+        this.carList.splice(index,1)
+      }
+      console.log('delItem')
     },
     decrease(count){
       console.log('decrease',count)
@@ -155,7 +190,9 @@ export default {
       })
     },
     itemChange(itemSelected, shop) {
-      shop.selected = shop.glist.some(item => item.selected)
+      shop.selected = shop.glist.some(item => {
+        return item.selected
+      })
     }
   }
 }

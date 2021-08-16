@@ -1,31 +1,45 @@
 <template>
 <!-- TODO 太丑，自己实现选择框 -->
-    <checkbox :checked="shouldChecked" @click="checkboxChange"/>
+  <checkbox-group @change="checkboxChange">
+    <checkbox value="checkboxValue"  :checked="shouldChecked"/>
+    <slot/>
+  </checkbox-group>
 </template>
 <script>
-/**
- * 双向绑定的checkbox
- */
 export default {
   name: 'xjyp-checkbox',
-  //<!--    <xjyp-checkbox :checked.sync="checked">-->
-// <!--    </xjyp-checkbox>-->
   model: {
     prop: 'checked',
     event: 'update:checked'
+  },
+  data() {
+    return {
+      initialValue:this.checked,
+    }
   },
   props: {
     checked: Boolean
   },
   computed: {
-    shouldChecked(){
-      return this.checked
+    shouldChecked:{
+      get(){
+        return this.checked
+      },
+      set(){
+
+      }
     }
   },
   methods: {
-    checkboxChange(){
-      this.$emit('update:checked', !this.shouldChecked)
-      this.$emit('onChange', !this.shouldChecked)
+    checkboxChange(event){
+      if(event.detail.value.length > 0){
+        this.$emit('update:checked',true)
+        this.$emit('onChange', true)
+      }else{
+        this.shouldChecked = false
+        this.$emit('onChange', false)
+        this.$emit('update:checked',false)
+      }
     }
   }
 }
