@@ -17,6 +17,7 @@
               <view style="width: 100%">
                 <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
                 <view class="product-pic">
+                  <image :src="good.img" style="width: 100%;height: 100%"/>
                 </view>
                 <view class="product-item-right">
                   <view> {{ good.name }}</view>
@@ -45,13 +46,6 @@ export default {
   data() {
     return {
       carList: [
-      ],
-    }
-  },
-  mounted() {
-    let that = this
-    setTimeout(function (){
-      that.carList = [
         {
           shopId: 1,
           title: "天猫超市",
@@ -121,8 +115,16 @@ export default {
               selected: false,
             }
           ]
-        }]
-    }, 5000)
+        }
+      ],
+    }
+  },
+  mounted() {
+    let that = this
+    // setTimeout(function (){
+    //   that.carList = [
+    //    ]
+    // }, 5000)
   },
   computed: {
     total() {
@@ -190,7 +192,7 @@ export default {
       })
     },
     itemChange(itemSelected, shop) {
-      shop.selected = shop.glist.some(item => {
+      shop.selected = shop.glist.every(item => {
         return item.selected
       })
     }
