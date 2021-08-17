@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <view>
+    <view style="padding: 0 10rpx">
       总价： {{ total }}
       总数： {{ count }}
       <xjyp-checkbox v-model="allShopSelected" @onChange="onAllShopSelected($event)">全选</xjyp-checkbox>
@@ -15,21 +15,23 @@
         <view class="store-item-product-list">
           <view class="product-item" v-for="(good, shopIndex) in shop.glist" :key="shopIndex">
             <del_slide-left :item="good"  :data_transit="{index:shopIndex,item:good}"  @delItem="delItem(index, shopIndex)" style="width: 100%">
-              <view style="width: 100%">
-                <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
-                <view class="product-pic">
-                  <image :src="good.img" style="width: 100%;height: 100%"/>
+              <view class="carrier">
+                <view >
+                  <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
                 </view>
-                <view class="product-item-right">
-                  <view> {{ good.name }}</view>
-                  <view> {{ good.spec_key_name }}</view>
-                  <view class="product-item-right-bottom">
-                    <view class="flex-start">￥ {{ good.price }}</view>
-                    <view class="flex-end">
-                      <xjyp-number-input v-model="good.number" :max="99" :min="1" @onIncrease="increase($event)" @onDecrease="decrease($event)"></xjyp-number-input>
-                    </view>
-                  </view>
-                </view>
+<!--                <view class="product-pic">-->
+<!--                  <image :src="good.img" style="width: 100%;height: 100%"/>-->
+<!--                </view>-->
+<!--                <view class="product-item-right">-->
+<!--                  <view> {{ good.name }}</view>-->
+<!--                  <view> {{ good.spec_key_name }}</view>-->
+<!--                  <view class="product-item-right-bottom">-->
+<!--                    <view class="flex-start">￥ {{ good.price }}</view>-->
+<!--                    <view class="flex-end">-->
+<!--                      <xjyp-number-input v-model="good.number" :max="99" :min="1" @onIncrease="increase($event)" @onDecrease="decrease($event)"></xjyp-number-input>-->
+<!--                    </view>-->
+<!--                  </view>-->
+<!--                </view>-->
               </view>
             </del_slide-left>
 
@@ -124,7 +126,7 @@ export default {
           ]
         }
       ]
-    }, 5000)
+    }, 0)
   },
   computed: {
     count(){
@@ -211,6 +213,7 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+
 .store-list {
   display: flex;
   flex-direction: column;
@@ -218,9 +221,9 @@ export default {
   .store-item {
     display: flex;
     flex-direction: column;
-    padding: 20rpx 15rpx;
+    padding: 20rpx calc(2%);;
     background-color: white;
-    margin-bottom: 20rpx;
+
 
     .store-item-head {
       display: flex;
@@ -231,34 +234,173 @@ export default {
       flex-direction: column;
 
       .product-item {
+        //width: calc(96%);
+        width: 100%;
+        height: calc(22vw + 40rpx);
+        margin: 5rpx 0;
+        border-radius: 15rpx;
+        box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
         display: flex;
-        flex-direction: row;
         align-items: center;
-        margin-left: 30rpx;
-        height: 400rpx;
-        background-color: #e3e3e3;
-        border-bottom: 1px solid #FFFFFF;
+        position: relative;
+        overflow: hidden;
+        z-index: 4;
+        border: 0;
 
+        .carrier {
+
+          //background-color: #fff;
+          //position: absolute;
+          width: 100%;
+          //padding: 0 0;
+          height: calc(22vw + 40rpx);
+          //z-index: 3;
+          //display: flex;
+          //align-items: center;
+
+          //.checkbox-box {
+          //  padding-left: 20upx;
+          //  flex-shrink: 0;
+          //  height: 22vw;
+          //  margin-right: 20upx;
+          //}
+
+          //.goods-info {
+          //  width: 100%;
+          //  display: flex;
+          //  padding-right: 20upx;
+          //
+          //  .img {
+          //    width: 22vw;
+          //    height: 22vw;
+          //    border-radius: 10upx;
+          //    overflow: hidden;
+          //    flex-shrink: 0;
+          //    margin-right: 10upx;
+          //
+          //    image {
+          //      width: 22vw;
+          //      height: 22vw;
+          //    }
+          //  }
+          //
+          //  .info {
+          //    width: 100%;
+          //    height: 22vw;
+          //    overflow: hidden;
+          //    display: flex;
+          //    flex-wrap: wrap;
+          //    position: relative;
+          //
+          //    .title {
+          //      width: 100%;
+          //      font-size: $font-base;
+          //      line-height: 40upx;
+          //      height: 80upx;
+          //    }
+          //
+          //    .price-number {
+          //      position: absolute;
+          //      width: 100%;
+          //      bottom: 0upx;
+          //      display: flex;
+          //      justify-content: space-between;
+          //      align-items: flex-end;
+          //      font-size: 28upx;
+          //      height: 60upx;
+          //
+          //      .remark {
+          //        font-size: $font-sm;
+          //        color: $font-color-disabled;
+          //      }
+          //      .number {
+          //        display: flex;
+          //        justify-content: center;
+          //        align-items: flex-end;
+          //
+          //        .input {
+          //          width: 60upx;
+          //          height: 60upx;
+          //          margin: 0 10upx;
+          //          background-color: #f3f3f3;
+          //
+          //          input {
+          //            width: 60upx;
+          //            height: 60upx;
+          //            display: flex;
+          //            justify-content: center;
+          //            align-items: center;
+          //            text-align: center;
+          //            font-size: 26upx;
+          //          }
+          //        }
+          //
+          //        .sub,
+          //        .add {
+          //          width: 45upx;
+          //          height: 45upx;
+          //          background-color: #f3f3f3;
+          //          border-radius: 5upx;
+          //
+          //          .icon {
+          //            font-size: 22upx;
+          //            width: 45upx;
+          //            height: 45upx;
+          //            display: flex;
+          //            justify-content: center;
+          //            align-items: center;
+          //          }
+          //        }
+          //      }
+          //    }
+          //  }
+          //
+          //  .state-wrapper {
+          //    width: 100%;
+          //    display: flex;
+          //    justify-content: space-between;
+          //
+          //    .state {
+          //      margin: 5upx 20upx;
+          //      height: 45upx;
+          //      background-color: $font-color-light;
+          //      color: $color-white;
+          //      padding: 5upx 20upx;
+          //      font-size: $font-sm;
+          //      border-radius: 6upx;
+          //    }
+          //
+          //    .spec {
+          //      font-size: $font-sm;
+          //      background-color: #f3f3f3;
+          //      color: #a7a7a7;
+          //      padding: 5upx 15upx;
+          //      border-radius: 20upx;
+          //      margin-bottom: 20vw;
+          //    }
+          //  }
+          //}
+        }
 
       }
     }
   }
 }
 
-.product-pic {
-  width: 150rpx;
-  height: 150rpx;
-  background-color: red;
-}
-
-.product-item-right {
-  display: flex;
-  flex-direction: column;
-}
-
-.product-item-right-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+//.product-pic {
+//  width: 150rpx;
+//  height: 150rpx;
+//  background-color: red;
+//}
+//
+//.product-item-right {
+//  display: flex;
+//  flex-direction: column;
+//}
+//
+//.product-item-right-bottom {
+//  display: flex;
+//  flex-direction: row;
+//  justify-content: space-between;
+//}
 </style>

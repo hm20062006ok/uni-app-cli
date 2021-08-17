@@ -1,7 +1,7 @@
 <template>
 <!-- TODO 太丑，自己实现选择框 -->
   <checkbox-group @change="checkboxChange">
-    <checkbox value="checkboxValue"  :checked="shouldChecked"/>
+    <checkbox value="checkboxValue"  :checked="shouldChecked" />
     <slot/>
   </checkbox-group>
 </template>
@@ -45,5 +45,7 @@ export default {
 }
 </script>
 <style scoped>
-
+.uni-checkbox-input{
+  border-radius: 50% !important;
+}
 </style>
