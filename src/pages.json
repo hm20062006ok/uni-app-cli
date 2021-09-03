@@ -2,7 +2,8 @@
 	"easycom": {
 		"autoscan": true,
 		"custom": {
-			"xjyp-(.*)": "@/components/xjyp/xjyp-$1/xjyp-$1.vue"
+			"xjyp-(.*)": "@/components/xjyp/xjyp-$1/xjyp-$1.vue",
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 		}
 	},
 	"pages": [
@@ -63,6 +64,7 @@
 				"selectedIconPath": "static/tabIcons/home-on@2x.png",
 				"text": "首页"
 			},
+
 			{
 				"pagePath": "pages/shop/index",
 				"iconPath": "static/tabIcons/shop-off@2x.png",

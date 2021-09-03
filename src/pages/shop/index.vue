@@ -19,19 +19,19 @@
                 <view >
                   <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
                 </view>
-<!--                <view class="product-pic">-->
-<!--                  <image :src="good.img" style="width: 100%;height: 100%"/>-->
-<!--                </view>-->
-<!--                <view class="product-item-right">-->
-<!--                  <view> {{ good.name }}</view>-->
-<!--                  <view> {{ good.spec_key_name }}</view>-->
-<!--                  <view class="product-item-right-bottom">-->
-<!--                    <view class="flex-start">￥ {{ good.price }}</view>-->
-<!--                    <view class="flex-end">-->
-<!--                      <xjyp-number-input v-model="good.number" :max="99" :min="1" @onIncrease="increase($event)" @onDecrease="decrease($event)"></xjyp-number-input>-->
-<!--                    </view>-->
-<!--                  </view>-->
-<!--                </view>-->
+                <view class="product-pic">
+                  <image :src="good.img" style="width: 100%;height: 100%"/>
+                </view>
+                <view class="product-item-right">
+                  <view> {{ good.name }}</view>
+                  <view> {{ good.spec_key_name }}</view>
+                  <view class="product-item-right-bottom">
+                    <view class="flex-start">￥ {{ good.price }}</view>
+                    <view class="flex-end">
+                      <xjyp-number-input v-model="good.number" :max="99" :min="1" @onIncrease="increase($event)" @onDecrease="decrease($event)"></xjyp-number-input>
+                    </view>
+                  </view>
+                </view>
               </view>
             </del_slide-left>
 

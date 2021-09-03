@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App'
 import {VUE_APP_API_URL} from "@/config";
 
+import uView from "uview-ui";
+Vue.use(uView);
 
 import store from "@/store";
 
