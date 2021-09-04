@@ -31,8 +31,13 @@
       }
     },
     {
-      "path": "pages/user/index"
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
     },
+
     {
       "path": "pages/shop/GoodsClass/index"
     },

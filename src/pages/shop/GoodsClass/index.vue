@@ -13,7 +13,7 @@
         <view v-for="(item,index) in tabbar" :key="index" class="u-tab-item"
               :class="[current == index ? 'u-tab-item-active' : '']"
               @tap.stop="swichMenu(index)">
-          <text class="u-line-1">{{ item.name }}</text>
+          <text class="u-line-1">{{ item.cateName }}</text>
         </view>
       </scroll-view>
       <scroll-view :scroll-top="scrollRightTop" :show-scrollbar="false" scroll-y scroll-with-animation class="right-box"
@@ -21,12 +21,12 @@
         <view class="page-view">
           <view class="class-item" :id="'item' + index" v-for="(item , index) in tabbar" :key="index">
             <view class="item-title">
-              <text>{{ item.name }}</text>
+              <text>{{ item.cateName }}</text>
             </view>
             <view class="item-container">
-              <view class="thumb-box" v-for="(item1, index1) in item.foods" :key="index1">
-                <image class="item-menu-image" :src="item1.icon" mode=""></image>
-                <view class="item-menu-name">{{ item1.name }}</view>
+              <view class="thumb-box" v-for="(item1, index1) in item.children" :key="index1" @tap="cateOnTap(item1)">
+                <image class="item-menu-image" :src="item1.pic" mode=""></image>
+                <view class="item-menu-name">{{ item1.cateName }}</view>
               </view>
             </view>
           </view>
@@ -62,6 +62,13 @@ export default {
     this.getMenuItemTop()
   },
   methods: {
+    cateOnTap(item){
+      uni.showToast({
+        title: item.cateName,
+        icon: 'none'
+      })
+      console.log('分类', item)
+    },
     // 点击左边的栏目切换
     async swichMenu(index) {
       if (this.arr.length == 0) {

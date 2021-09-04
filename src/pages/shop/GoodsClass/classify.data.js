@@ -1,1086 +1,412 @@
-export default[
-   {
-      "name": "女装",
-      "foods": [
-          {
-            "name": "A字裙",
-            "key": "A字裙",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/1.jpg",
-            "cat": 10
-          },
-          {
-            "name": "T恤",
-            "key": "T恤",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/2.jpg",
-            "cat": 10
-          },
-          {
-            "name": "半身裙",
-            "key": "半身裙",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/3.jpg",
-            "cat": 10
-          },
-          {
-            "name": "衬衫",
-            "key": "衬衫",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/4.jpg",
-            "cat": 10
-          },
-          {
-            "name": "短裙",
-            "key": "短裙",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/5.jpg",
-            "cat": 10
-          },
-          {
-            "name": "阔腿裤",
-            "key": "阔腿裤",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/6.jpg",
-            "cat": 10
-          },
-          {
-            "name": "连衣裙",
-            "key": "连衣裙",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/7.jpg",
-            "cat": 10
-          },
-          {
-            "name": "妈妈装",
-            "key": "妈妈装",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/8.jpg",
-            "cat": 10
-          },
-          {
-            "name": "牛仔裤",
-            "key": "牛仔裤",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/9.jpg",
-            "cat": 10
-          },
-          {
-            "name": "情侣装",
-            "key": "情侣装",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/10.jpg",
-            "cat": 10
-          },
-          {
-            "name": "休闲裤",
-            "key": "休闲裤",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/11.jpg",
-            "cat": 10
-          },
-          {
-            "name": "雪纺衫",
-            "key": "雪纺衫",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/12.jpg",
-            "cat": 10
-          },
-          {
-            "name": "防晒衣",
-            "key": "防晒衣",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/13.jpg",
-            "cat": 10
-          },
-          {
-            "name": "礼服/婚纱",
-            "key": "礼服婚纱",
-            "icon": "https://cdn.uviewui.com/uview/common/classify/1/14.jpg",
-            "cat": 10
-          }
-      ]
-   },
-   {
-    "name": "美食",
-    "foods": [
-        {
-          "name": "火锅",
-          "key": "火锅",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/1.jpg",
-          "cat": 6
-        },
-        {
-          "name": "糕点饼干",
-          "key": "糕点饼干",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/2.jpg",
-          "cat": 6
-        },
-        {
-          "name": "坚果果干",
-          "key": "坚果果干",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/3.jpg",
-          "cat": 6
-        },
-        {
-          "name": "酒类",
-          "key": "酒类",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/4.jpg",
-          "cat": 6
-        },
-        {
-          "name": "辣条",
-          "key": "辣条",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/5.jpg",
-          "cat": 6
-        },
-        {
-          "name": "大礼包",
-          "key": "大礼包",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/6.jpg",
-          "cat": 6
-        },
-        {
-          "name": "精品茗茶",
-          "key": "茶",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/7.jpg",
-          "cat": 6
-        },
-        {
-          "name": "休闲食品",
-          "key": "休闲食品",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/8.jpg",
-          "cat": 6
-        },
-        {
-          "name": "糖果巧克力",
-          "key": "糖果巧克力",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/9.jpg",
-          "cat": 6
-        },
-        {
-          "name": "方便速食",
-          "key": "方便速食",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/10.jpg",
-          "cat": 6
-        },
-        {
-          "name": "营养代餐",
-          "key": "营养代餐",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/11.jpg",
-          "cat": 6
-        },
-        {
-          "name": "粮油副食",
-          "key": "粮油",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/12.jpg",
-          "cat": 6
-        },
-        {
-          "name": "生鲜水果",
-          "key": "水果",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/13.jpg",
-          "cat": 6
-        },
-        {
-          "name": "饮品",
-          "key": "饮品",
-          "icon": "https://cdn.uviewui.com/uview/common/classify/2/14.jpg",
-          "cat": 6
-        }
-        ]
-    },
+export default [
     {
-        "name": "美妆",
-        "foods": [
+        "id": 107,
+        "pid": 0,
+        "cateName": "直播专区",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210708/f59be55d55c94b48bae36a653260dcc4",
+        "children": [
             {
-                "name": "化妆刷",
-                "key": "化妆刷",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/1.jpg",
-                "cat": 3
+                "id": 108,
+                "pid": 107,
+                "cateName": "直播专区一",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210902/01b882a80b6d405b94a6e4916946db58.png",
+                "children": []
             },
             {
-                "name": "粉底",
-                "key": "粉底",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/2.jpg",
-                "cat": 3
-            },
-            {
-                "name": "洗发护发",
-                "key": "洗发护发",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/3.jpg",
-                "cat": 3
-            },
-            {
-                "name": "美容工具",
-                "key": "美容工具",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/4.jpg",
-                "cat": 3
-            },
-            {
-                "name": "眼部护理",
-                "key": "眼部护理",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/5.jpg",
-                "cat": 3
-            },
-            {
-                "name": "眉妆",
-                "key": "眉妆",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/6.jpg",
-                "cat": 3
-            },
-            {
-                "name": "卸妆品",
-                "key": "卸妆品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/7.jpg",
-                "cat": 3
-            },
-            {
-                "name": "基础护肤",
-                "key": "基础护肤",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/8.jpg",
-                "cat": 3
-            },
-            {
-                "name": "眼妆",
-                "key": "眼妆",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/9.jpg",
-                "cat": 3
-            },
-            {
-                "name": "唇妆",
-                "key": "唇妆",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/10.jpg",
-                "cat": 3
-            },
-            {
-                "name": "面膜",
-                "key": "面膜",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/11.jpg",
-                "cat": 3
-            },
-            {
-                "name": "沐浴用品",
-                "key": "沐浴用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/12.jpg",
-                "cat": 3
-            },
-            {
-                "name": "护肤套装",
-                "key": "护肤套装",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/13.jpg",
-                "cat": 3
-            },
-            {
-                "name": "防晒品",
-                "key": "防晒品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/14.jpg",
-                "cat": 3
-            },
-            {
-                "name": "美甲",
-                "key": "美甲",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/3/15.jpg",
-                "cat": 3
-            }
-
-        ]
-    },
-    {
-        "name": "居家日用",
-        "foods": [
-            {
-              "name": "垃圾袋",
-              "key": "垃圾袋",
-              "icon": "https://cdn.uviewui.com/uview/common/classify/4/1.jpg",
-              "cat": 4
-            },
-            {
-                "name": "纸巾",
-                "key": "纸巾",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/2.jpg",
-                "cat": 4
-            },
-            {
-                "name": "驱蚊用品",
-                "key": "驱蚊用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/3.jpg",
-                "cat": 4
-            },
-            {
-                "name": "收纳神器",
-                "key": "收纳神器",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/4.jpg",
-                "cat": 4
-            },
-            {
-                "name": "厨房用品",
-                "key": "厨房用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/5.jpg",
-                "cat": 4
-            },
-            {
-                "name": "厨房烹饪",
-                "key": "烹饪",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/6.jpg",
-                "cat": 4
-            },
-            {
-                "name": "衣物晾晒",
-                "key": "衣物晾晒",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/7.jpg",
-                "cat": 4
-            },
-            {
-                "name": "衣物护理",
-                "key": "衣物护理",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/8.jpg",
-                "cat": 4
-            },
-            {
-                "name": "宠物用品",
-                "key": "宠物用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/9.jpg",
-                "cat": 4
-            },
-            {
-                "name": "医药保健",
-                "key": "医药",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/10.jpg",
-                "cat": 4
-            },
-            {
-                "name": "日用百货",
-                "key": "百货",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/11.jpg",
-                "cat": 4
-            },
-            {
-                "name": "清洁用品",
-                "key": "清洁",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/12.jpg",
-                "cat": 4
-            },
-            {
-                "name": "绿植园艺",
-                "key": "绿植",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/4/13.jpg",
-                "cat": 4
+                "id": 111,
+                "pid": 107,
+                "cateName": "直播专区二",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210902/98d3e5f765974f51b4ca8c769a66d707.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "男装",
-        "foods": [
+        "id": 54,
+        "pid": 0,
+        "cateName": "爆款专区",
+        "pic": "",
+        "children": [
             {
-                "name": "爸爸装",
-                "key": "爸爸装",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/1.jpg",
-                "cat": 12
+                "id": 65,
+                "pid": 54,
+                "cateName": "爆款专区",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/955f5f136f3e4709b727b87f911d2e82.png",
+                "children": []
             },
             {
-                "name": "牛仔裤",
-                "key": "牛仔裤",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/2.jpg",
-                "cat": 12
-            },
-            {
-                "name": "衬衫",
-                "key": "衬衫",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/3.jpg",
-                "cat": 12
-            },
-            {
-                "name": "休闲裤",
-                "key": "休闲裤",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/4.jpg",
-                "cat": 12
-            },
-            {
-                "name": "外套",
-                "key": "外套",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/5.jpg",
-                "cat": 12
-            },
-            {
-                "name": "T恤",
-                "key": "T恤",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/6.jpg",
-                "cat": 12
-            },
-            {
-                "name": "套装",
-                "key": "套装",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/7.jpg",
-                "cat": 12
-            },
-            {
-                "name": "运动裤",
-                "key": "运动裤",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/8.jpg",
-                "cat": 12
-            },
-            {
-                "name": "马甲/背心",
-                "key": "马甲背心",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/9.jpg",
-                "cat": 12
-            },
-            {
-                "name": "POLO衫",
-                "key": "POLO衫",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/10.jpg",
-                "cat": 12
-            },
-            {
-                "name": "商务装",
-                "key": "商务装",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/5/11.jpg",
-                "cat": 12
+                "id": 55,
+                "pid": 54,
+                "cateName": "社群爆款",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/86c4045a36a747968f390e4fd9bf77e1.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "鞋品",
-        "foods": [
+        "id": 30,
+        "pid": 0,
+        "cateName": "酒水茶饮",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210413/2df60607576940a0a3e81ba8e3e98e18",
+        "children": [
             {
-                "name": "单鞋",
-                "key": "单鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/1.jpg",
-                "cat": 5
+                "id": 105,
+                "pid": 30,
+                "cateName": "乳品",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/c0b9bd768d5845b9baa638b66f577eb9.png",
+                "children": []
             },
             {
-                "name": "皮鞋",
-                "key": "皮鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/2.jpg",
-                "cat": 5
+                "id": 66,
+                "pid": 30,
+                "cateName": "酒水",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/a1948ef8008a49939c4b4ef5dc021428.png",
+                "children": []
             },
             {
-                "name": "帆布鞋",
-                "key": "帆布鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/3.jpg",
-                "cat": 5
+                "id": 36,
+                "pid": 30,
+                "cateName": "茗茶",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/5905974dc4454f42bc716e09a05f0639.png",
+                "children": []
             },
             {
-                "name": "北京老布鞋",
-                "key": "北京老布鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/4.jpg",
-                "cat": 5
-            },
-            {
-                "name": "运动鞋",
-                "key": "运动鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/5.jpg",
-                "cat": 5
-            },
-            {
-                "name": "拖鞋",
-                "key": "拖鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/6.jpg",
-                "cat": 5
-            },
-            {
-                "name": "凉鞋",
-                "key": "凉鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/7.jpg",
-                "cat": 5
-            },
-            {
-                "name": "休闲鞋",
-                "key": "休闲鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/8.jpg",
-                "cat": 5
-            },
-            {
-                "name": "高跟鞋",
-                "key": "高跟鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/9.jpg",
-                "cat": 5
-            },
-            {
-                "name": "老人鞋",
-                "key": "老人鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/10.jpg",
-                "cat": 5
-            },
-            {
-                "name": "懒人鞋",
-                "key": "懒人鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/6/11.jpg",
-                "cat": 5
+                "id": 67,
+                "pid": 30,
+                "cateName": "饮料",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/9f30c08f5f7e4076a7189e64930e69df.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "数码家电",
-        "foods": [
+        "id": 37,
+        "pid": 0,
+        "cateName": "美妆日护",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210413/2df60607576940a0a3e81ba8e3e98e18",
+        "children": [
             {
-                "name": "数据线",
-                "key": "数据线",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/1.jpg",
-                "cat": 8
+                "id": 68,
+                "pid": 37,
+                "cateName": "面部护理",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/5abd20254f6347c99ee50646963a8203.png",
+                "children": []
             },
             {
-                "name": "耳机",
-                "key": "耳机",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/2.jpg",
-                "cat": 8
+                "id": 69,
+                "pid": 37,
+                "cateName": "美妆护理",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/db83f731c1f94173b0e4bf758e565ec8.png",
+                "children": []
             },
             {
-                "name": "生活家电",
-                "key": "家电",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/3.jpg",
-                "cat": 8
+                "id": 70,
+                "pid": 37,
+                "cateName": "功效护理",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/4c99bb15c4634c708ddbfb02c9dc8bcf.png",
+                "children": []
             },
             {
-                "name": "电风扇",
-                "key": "电风扇",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/4.jpg",
-                "cat": 8
+                "id": 71,
+                "pid": 37,
+                "cateName": "男性护理",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/00c7988d401d41a1b0f528768e9ca28d.png",
+                "children": []
             },
             {
-                "name": "电吹风",
-                "key": "电吹风",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/5.jpg",
-                "cat": 8
-            },
-            {
-                "name": "手机壳",
-                "key": "手机壳",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/6.jpg",
-                "cat": 8
-            },
-            {
-                "name": "榨汁机",
-                "key": "榨汁机",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/7.jpg",
-                "cat": 8
-            },
-            {
-                "name": "小家电",
-                "key": "小家电",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/8.jpg",
-                "cat": 8
-            },
-            {
-                "name": "数码电子",
-                "key": "数码",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/9.jpg",
-                "cat": 8
-            },
-            {
-                "name": "电饭锅",
-                "key": "电饭锅",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/10.jpg",
-                "cat": 8
-            },
-            {
-                "name": "手机支架",
-                "key": "手机支架",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/11.jpg",
-                "cat": 8
-            },
-            {
-                "name": "剃须刀",
-                "key": "剃须刀",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/12.jpg",
-                "cat": 8
-            },
-            {
-                "name": "充电宝",
-                "key": "充电宝",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/13.jpg",
-                "cat": 8
-            },
-            {
-                "name": "手机配件",
-                "key": "手机配件",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/7/14.jpg",
-                "cat": 8
+                "id": 38,
+                "pid": 37,
+                "cateName": "身体护理",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/0a4ba275eaeb4dacaf45eacb6c1d7ba3.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "母婴",
-        "foods": [
+        "id": 39,
+        "pid": 0,
+        "cateName": "家居家纺",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210530/622356526a844b828ff7c0ed3e2ac0f1",
+        "children": [
             {
-              "name": "婴童服饰",
-              "key": "衣服",
-              "icon": "https://cdn.uviewui.com/uview/common/classify/8/1.jpg",
-              "cat": 2  
+                "id": 75,
+                "pid": 39,
+                "cateName": "被子",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/658bee2f38d54fc1b903e8d8e7d2fd49.png",
+                "children": []
             },
             {
-                "name": "玩具乐器",
-                "key": "玩具乐器",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/2.jpg",
-                "cat": 2  
+                "id": 78,
+                "pid": 39,
+                "cateName": "大件家居",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/2a75ac3954cd4e19a7327d098d0e950d.png",
+                "children": []
             },
             {
-                "name": "尿不湿",
-                "key": "尿不湿",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/3.jpg",
-                "cat": 2  
+                "id": 76,
+                "pid": 39,
+                "cateName": "应季家纺",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/210c57a9337f47aba04a0d9984439ffe.png",
+                "children": []
             },
             {
-                "name": "安抚牙胶",
-                "key": "安抚牙胶",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/4.jpg",
-                "cat": 2  
+                "id": 72,
+                "pid": 39,
+                "cateName": "套装系列",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/9fdbeb8ac88c49b88c5abb8e801dbb4a.png",
+                "children": []
             },
             {
-                "name": "奶瓶奶嘴",
-                "key": "奶瓶奶嘴",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/5.jpg",
-                "cat": 2  
+                "id": 73,
+                "pid": 39,
+                "cateName": "枕头",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/46064b7e1ffe429c9b1fe415a4089e04.png",
+                "children": []
             },
             {
-                "name": "孕妈用品",
-                "key": "孕妈用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/6.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "宝宝用品",
-                "key": "宝宝用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/7.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "婴童湿巾",
-                "key": "湿巾",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/8.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "喂养洗护",
-                "key": "洗护",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/9.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "婴童鞋靴",
-                "key": "童鞋",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/10.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "口水巾",
-                "key": "口水巾",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/11.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "营养辅食",
-                "key": "营养",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/12.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "婴幼书籍",
-                "key": "书籍",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/13.jpg",
-                "cat": 2  
-            },
-            {
-                "name": "婴儿车",
-                "key": "婴儿车",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/8/14.jpg",
-                "cat": 2  
+                "id": 74,
+                "pid": 39,
+                "cateName": "凉席",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/831f51392f844104ae7617331abcbd3d.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "箱包",
-        "foods": [
+        "id": 41,
+        "pid": 0,
+        "cateName": "箱包服饰",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210413/2df60607576940a0a3e81ba8e3e98e18",
+        "children": [
             {
-                "name": "单肩包",
-                "key": "单肩包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/1.jpg",
-                "cat": 0
+                "id": 79,
+                "pid": 41,
+                "cateName": "箱包",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/b7be18dbdbd24dbbb0e58e244e6e7502.png",
+                "children": []
             },
             {
-                "name": "斜挎包",
-                "key": "斜挎包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/2.jpg",
-                "cat": 0
+                "id": 80,
+                "pid": 41,
+                "cateName": "衣服",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/a2d99b75c95c46ab865d06e23b48d16d.png",
+                "children": []
             },
             {
-                "name": "女包",
-                "key": "女包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/3.jpg",
-                "cat": 0
+                "id": 81,
+                "pid": 41,
+                "cateName": "裤子",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/7c23d3a729f24490bc3c701461583f21.png",
+                "children": []
             },
             {
-                "name": "男包",
-                "key": "男包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/4.jpg",
-                "cat": 0
+                "id": 82,
+                "pid": 41,
+                "cateName": "内衣",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/81352106f45b4589ad654fde83351507.png",
+                "children": []
             },
             {
-                "name": "双肩包",
-                "key": "双肩包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/5.jpg",
-                "cat": 0
+                "id": 83,
+                "pid": 41,
+                "cateName": "鞋子",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/478a6e5e1b594d2ebf4f92a741ef9eca.png",
+                "children": []
             },
             {
-                "name": "小方包",
-                "key": "小方包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/6.jpg",
-                "cat": 0
+                "id": 84,
+                "pid": 41,
+                "cateName": "袜子",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/e0f903edd8744a79bdd3130edd953ab1.png",
+                "children": []
             },
             {
-                "name": "钱包",
-                "key": "钱包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/7.jpg",
-                "cat": 0
-            },
-            {
-                "name": "旅行箱包",
-                "key": "旅行箱包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/8.jpg",
-                "cat": 0
-            },
-            {
-                "name": "零钱包",
-                "key": "零钱包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/9.jpg",
-                "cat": 0
-            },
-            {
-                "name": "手提包",
-                "key": "手提包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/10.jpg",
-                "cat": 0
-            },
-            {
-                "name": "胸包",
-                "key": "胸包",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/9/11.jpg",
-                "cat": 0
+                "id": 85,
+                "pid": 41,
+                "cateName": "饰品",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/a00dd1ef2549453d9cc9de9fe0e273c3.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "内衣",
-        "foods": [
+        "id": 27,
+        "pid": 0,
+        "cateName": "厨具电器",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210707/67265097f006493bbf9384b73b597c8d",
+        "children": [
             {
-                "name": "袜子",
-                "key": "袜子",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/1.jpg",
-                "cat": 11
+                "id": 86,
+                "pid": 27,
+                "cateName": "厨具用品",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/6a998cf90baa432697fcedcbf0f32fdb.png",
+                "children": []
             },
             {
-                "name": "吊带背心",
-                "key": "吊带背心",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/2.jpg",
-                "cat": 11
+                "id": 87,
+                "pid": 27,
+                "cateName": "厨房电器",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/d872be48c2e9467a82d70d37a35b2c99.png",
+                "children": []
             },
             {
-                "name": "抹胸",
-                "key": "抹胸",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/3.jpg",
-                "cat": 11
+                "id": 88,
+                "pid": 27,
+                "cateName": "大家电",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/35b8cbe6ce5649d2a9a2dedabdb068a6.png",
+                "children": []
             },
             {
-                "name": "内裤",
-                "key": "内裤",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/4.jpg",
-                "cat": 11
-            },
-            {
-                "name": "文胸",
-                "key": "文胸",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/5.jpg",
-                "cat": 11
-            },
-            {
-                "name": "文胸套装",
-                "key": "文胸套装",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/6.jpg",
-                "cat": 11
-            },
-            {
-                "name": "打底塑身",
-                "key": "打底塑身",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/7.jpg",
-                "cat": 11
-            },
-            {
-                "name": "家居服",
-                "key": "家居服",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/8.jpg",
-                "cat": 11
-            },
-            {
-                "name": "船袜",
-                "key": "船袜",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/9.jpg",
-                "cat": 11
-            },
-            {
-                "name": "情侣睡衣",
-                "key": "情侣睡衣",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/10.jpg",
-                "cat": 11
-            },
-            {
-                "name": "丝袜",
-                "key": "丝袜",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/10/11.jpg",
-                "cat": 11
+                "id": 89,
+                "pid": 27,
+                "cateName": "小家电",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/f9ec94be748e4eeda993f7167e3e4334.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "文娱车品",
-        "foods": [
+        "id": 11,
+        "pid": 0,
+        "cateName": "日用百货",
+        "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210707/20cff7a88d0d4421b90c2c45502db2f8",
+        "children": [
             {
-                "name": "车市车品",
-                "key": "车市车品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/1.jpg",
-                "cat": 7
+                "id": 90,
+                "pid": 11,
+                "cateName": "家居用品",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/4f0456786f114302856951f8945c58bb.png",
+                "children": []
             },
             {
-                "name": "办公文具",
-                "key": "办公文具",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/2.jpg",
-                "cat": 7
+                "id": 91,
+                "pid": 11,
+                "cateName": "个人护理",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/ae8fccb7b3c94bfe95a5a247c8d13d17.png",
+                "children": []
             },
             {
-                "name": "考试必备",
-                "key": "考试必备",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/3.jpg",
-                "cat": 7
-            },
-            {
-                "name": "笔记本",
-                "key": "笔记本",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/4.jpg",
-                "cat": 7
-            },
-            {
-                "name": "艺术礼品",
-                "key": "礼品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/5.jpg",
-                "cat": 7
-            },
-            {
-                "name": "书写工具",
-                "key": "书写工具",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/6.jpg",
-                "cat": 7
-            },
-            {
-                "name": "车载电器",
-                "key": "车载电器",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/7.jpg",
-                "cat": 7
-            },
-            {
-                "name": "图书音像",
-                "key": "图书音像",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/8.jpg",
-                "cat": 7
-            },
-            {
-                "name": "画具画材",
-                "key": "画具画材",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/11/9.jpg",
-                "cat": 7
+                "id": 92,
+                "pid": 11,
+                "cateName": "应季百货",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/95d45096b8d04ee5873e7f0334c5dd3e.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "配饰",
-        "foods": [
+        "id": 102,
+        "pid": 0,
+        "cateName": "湖南助农",
+        "pic": "",
+        "children": [
             {
-                "name": "太阳镜",
-                "key": "太阳镜",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/1.jpg",
-                "cat": 0
-            },
-            {
-                "name": "皮带",
-                "key": "皮带",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/2.jpg",
-                "cat": 0
-            },
-            {
-                "name": "棒球帽",
-                "key": "棒球帽",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/3.jpg",
-                "cat": 0
-            },
-            {
-                "name": "手表",
-                "key": "手表",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/4.jpg",
-                "cat": 0
-            },
-            {
-                "name": "发饰",
-                "key": "发饰",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/5.jpg",
-                "cat": 0
-            },
-            {
-                "name": "项链",
-                "key": "项链",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/6.jpg",
-                "cat": 0
-            },
-            {
-                "name": "手饰",
-                "key": "手饰",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/7.jpg",
-                "cat": 0
-            },
-            {
-                "name": "耳环",
-                "key": "耳环",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/8.jpg",
-                "cat": 0
-            },
-            {
-                "name": "帽子丝巾",
-                "key": "帽子丝巾",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/9.jpg",
-                "cat": 0
-            },
-            {
-                "name": "眼镜墨镜",
-                "key": "眼镜墨镜",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/10.jpg",
-                "cat": 0
-            },
-            {
-                "name": "发带发箍",
-                "key": "发带发箍",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/12/11.jpg",
-                "cat": 0
+                "id": 3,
+                "pid": 102,
+                "cateName": "湖南助农",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/5f528f4c172b4d9aa3be636a63c0cd38.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "家装家纺",
-        "foods": [
+        "id": 43,
+        "pid": 0,
+        "cateName": "健康营养",
+        "pic": "",
+        "children": [
             {
-                "name": "家居饰品",
-                "key": "家居饰品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/1.jpg",
-                "cat": 0
-            },
-            {
-                "name": "凉席",
-                "key": "凉席",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/2.jpg",
-                "cat": 0
-            },
-            {
-                "name": "背枕靠枕",
-                "key": "靠枕",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/3.jpg",
-                "cat": 0
-            },
-            {
-                "name": "床上用品",
-                "key": "床上用品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/4.jpg",
-                "cat": 0
-            },
-            {
-                "name": "摆件",
-                "key": "摆件",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/5.jpg",
-                "cat": 0
-            },
-            {
-                "name": "四件套",
-                "key": "四件套",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/6.jpg",
-                "cat": 0
-            },
-            {
-                "name": "装饰品",
-                "key": "装饰品",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/7.jpg",
-                "cat": 0
-            },
-            {
-                "name": "卫浴用品",
-                "key": "卫浴",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/8.jpg",
-                "cat": 0
-            },
-            {
-                "name": "家居家装",
-                "key": "家具",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/9.jpg",
-                "cat": 0
-            },
-            {
-                "name": "蚊帐",
-                "key": "蚊帐",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/10.jpg",
-                "cat": 0
-            },
-            {
-                "name": "墙纸贴纸",
-                "key": "墙纸",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/11.jpg",
-                "cat": 0
-            },
-            {
-                "name": "空调被",
-                "key": "空调被",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/13/12.jpg",
-                "cat": 0
+                "id": 44,
+                "pid": 43,
+                "cateName": "健康营养",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/c421d0499a7c4ad292255c71e2ab3690.png",
+                "children": []
             }
         ]
     },
     {
-        "name": "户外运动",
-        "foods": [
+        "id": 62,
+        "pid": 0,
+        "cateName": "助农专区",
+        "pic": "",
+        "children": [
             {
-                "name": "游泳装备",
-                "key": "游泳",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/1.jpg",
-                "cat": 0
+                "id": 93,
+                "pid": 62,
+                "cateName": "特产",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/4f32729a0fb7432a9bcf84a65ce60fa6.png",
+                "children": []
             },
             {
-                "name": "泳镜",
-                "key": "泳镜",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/2.jpg",
-                "cat": 0
+                "id": 94,
+                "pid": 62,
+                "cateName": "水果",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/9736592670dd461a9b1d1e6f008e4687.png",
+                "children": []
             },
             {
-                "name": "户外装备",
-                "key": "户外",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/3.jpg",
-                "cat": 0
+                "id": 96,
+                "pid": 62,
+                "cateName": "干货",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/e25f6b8a4bf241de95d67d0b9acd641e.png",
+                "children": []
             },
             {
-                "name": "健身服饰",
-                "key": "健身",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/4.jpg",
-                "cat": 0
+                "id": 97,
+                "pid": 62,
+                "cateName": "调味",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/68bc82a724e146c69ea39202f9d47e66.png",
+                "children": []
             },
             {
-                "name": "泳衣",
-                "key": "泳衣",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/5.jpg",
-                "cat": 0
+                "id": 98,
+                "pid": 62,
+                "cateName": "零食",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/b3f997ef9bcb48789b9a01ae85ec812a.png",
+                "children": []
             },
             {
-                "name": "瑜伽垫",
-                "key": "瑜伽垫",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/6.jpg",
-                "cat": 0
+                "id": 99,
+                "pid": 62,
+                "cateName": "粮油",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/1ef91c5dd4be4833906539599c021a4a.png",
+                "children": []
             },
             {
-                "name": "瑜伽用品",
-                "key": "瑜伽",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/7.jpg",
-                "cat": 0
+                "id": 100,
+                "pid": 62,
+                "cateName": "米面",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/931ab3d685d64e888999d07c662f38ac.png",
+                "children": []
             },
             {
-                "name": "健身装备",
-                "key": "健身",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/8.jpg",
-                "cat": 0
+                "id": 101,
+                "pid": 62,
+                "cateName": "速食",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/5b4ac35099844003acae108e4afd4da5.png",
+                "children": []
             },
             {
-                "name": "球迷用品",
-                "key": "球迷",
-                "icon": "https://cdn.uviewui.com/uview/common/classify/14/9.jpg",
-                "cat": 0
+                "id": 95,
+                "pid": 62,
+                "cateName": "生鲜",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/6cfa7f98ae964b9da414a81774097b66.png",
+                "children": []
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "pid": 0,
+        "cateName": "礼包专区",
+        "pic": "http://127.0.0.1:8001/file/pic/20210323115133774333.png",
+        "children": [
+            {
+                "id": 103,
+                "pid": 1,
+                "cateName": "超级会员晋升大礼包",
+                "pic": "https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210830/a15b4ba440d8451ba5a87b1fe95b8330.png",
+                "children": []
             }
         ]
     }
