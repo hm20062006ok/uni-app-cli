@@ -31,12 +31,9 @@ export default {
   },
   methods: {
     routerGo(item) {
-      this.$Router.push({
-        path: '/pages/shop/GoodsCon/index',
-        query: {
-          id: item.id
-        }
-      });
+      console.log('item.id ',item.id)
+      // this.$Router.push({ path: '/pages/shop/GoodDetails/index', query: { id: item.id }})
+      this.$Router.push({ path: '/pages/shop/GoodDetails/index', query: {id: item.id }});
     },
   }
 }

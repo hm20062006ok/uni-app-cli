@@ -43,6 +43,12 @@
     },
     {
       "path": "pages/shop/index"
+    },
+    {
+      "path": "pages/user/MyOrder/index"
+    },
+    {
+      "path": "pages/shop/GoodDetails/index"
     }
   ],
   "globalStyle": {

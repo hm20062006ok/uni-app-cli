@@ -38,30 +38,35 @@ export default {
       navBarTextColor: 'white',
       firstList: [
         {
+          id:0,
           image: '/static/mock/1024.png',
           storeName: 'iPhone 12 Pro Max',
           vipPrice: 9999,
           price: 999,
         },
         {
+          id: 1,
           image: '/static/mock/1024.png',
           storeName: 'iPhone 12 Pro Max',
           vipPrice: 9999,
           price: 999,
         },
         {
+          id: 2,
           image: '/static/mock/1024.png',
           storeName: 'iPhone 12 Pro Max',
           vipPrice: 9999,
           price: 999,
         },
         {
+          id:3,
           image: '/static/mock/1024.png',
           storeName: 'iPhone 12 Pro Max',
           vipPrice: 9999,
           price: 999,
         },
         {
+          id: 4,
           image: '/static/mock/1024.png',
           storeName: 'iPhone 12 Pro Max',
           vipPrice: 9999,
