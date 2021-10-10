@@ -43,16 +43,15 @@ Vue.prototype.$urlKey = 'url'
 
 
 // #ifdef APP-PLUS
-Vue.prototype.$deviceType = 'appPlus'
+Vue.prototype.$deviceType = 'app'
 Vue.prototype.$urlKey = 'uniapp_url'
-store.dispatch('updateDeviceType', 'appPlus')
-console.log(Vue.prototype.$platform)
+store.dispatch('updateDeviceType', 'app')
 // #endif
 
 // #ifdef MP-WEIXIN
-Vue.prototype.$deviceType = 'mpWeixin'
+Vue.prototype.$deviceType = 'routine'
 Vue.prototype.$urlKey = 'wxapp_url'
-store.dispatch('updateDeviceType', 'mpWeixin')
+store.dispatch('updateDeviceType', 'routine')
 // #endif
 
 Vue.mixin({
