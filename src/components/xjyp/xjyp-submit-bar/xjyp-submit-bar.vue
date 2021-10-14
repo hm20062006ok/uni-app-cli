@@ -6,7 +6,7 @@
         <view class="text u-line-1">首页</view>
       </view>
 			<view class="item" @click="favoriteChange()">
-        <u-icon name="heart-fill" :size="40" color="red"  v-if="isFavouriteLocal"></u-icon>
+        <u-icon name="heart-fill" :size="40" color="red"  v-if="isFavourite"></u-icon>
         <u-icon name="heart" :size="40" :color="$u.color['contentColor']"v-else></u-icon>
         <view class="text u-line-1">收藏</view>
 			</view>
@@ -18,7 +18,7 @@
 		</view>
 		<view class="right">
 			<view class="cart btn u-line-1" @click="addToCart()">加入购物车</view>
-			<view class="buy btn u-line-1" @click="shopingNow()">立即购买</view>
+			<view class="buy btn u-line-1" @click="shoppingNow()">立即购买</view>
 		</view>
 	</view>
 </template>
@@ -32,24 +32,22 @@ export default {
       type:Boolean
     },
     cartNumber: {
-      default: '2',
+      default: '0',
       type:String
     }
   },
   data(){
-    return {
-      isFavouriteLocal: this.isFavourite
-    }
+
   },
   methods: {
     favoriteChange(){
-
+      this.$emit('update:isFavourite', !this.isFavourite)
     },
     addToCart(){
-
+      this.$emit('onAddToCart')
     },
-    shopingNow(){
-
+    shoppingNow(){
+      this.$emit('onShoppingNow')
     }
   }
 

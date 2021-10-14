@@ -26,8 +26,8 @@
     <!-- 规格 -->
     <view class="page-content-with-padding u-flex u-row-between u-margin-top-20">
       <view>
-        <text>{{attrText}}</text>
-        <text>{{attrValue}}</text>
+        <text>{{ attrText }}</text>
+        <text>{{ attrValue }}</text>
       </view>
       <u-icon name="arrow-right"></u-icon>
     </view>
@@ -37,7 +37,7 @@
       <view class="u-flex u-row-between">
         <view>用户评价（{{ replyCount }}）</view>
         <view>
-          <text  style="margin-right: 10rpx">{{replyChance}}%好评</text>
+          <text style="margin-right: 10rpx">{{ replyChance }}%好评</text>
           <u-icon name="arrow-right"></u-icon>
         </view>
       </view>
@@ -55,11 +55,13 @@
     <view v-html="storeInfo.description" class="product-details">
     </view>
     <view class="submit-bar">
-      <xjyp-submit-bar></xjyp-submit-bar>
+      <xjyp-submit-bar :isFavourite.sync="isFavourite" :cartNumber.sync="cartNumber" @onAddToCart="onAddToCart"
+                       @onShoppingNow="onShoppingNow"></xjyp-submit-bar>
     </view>
 
+    <!-- Toast-->
     <view>
-      <u-toast ref="uToast" />
+      <u-toast ref="uToast"/>
     </view>
   </view>
 </template>
@@ -73,12 +75,14 @@ export default {
   components: {ProductSwiper},
   computed: {
     ...mapGetters(['isLogin', 'location', 'userInfo']),
-    attrText(){
+    attrText() {
       return this.attrValue === '' ? '请选择：' : '已选择：'
     }
   },
   data() {
     return {
+      isFavourite: false,
+      cartNumber: 0,
       storeInfo: {
         vipPrice: '',
         storeName: '',
@@ -87,10 +91,10 @@ export default {
         sales: '',
       },
       id: '',
-      attrValue:'',
-      reply: {
-      },
-      replyCount: ''
+      attrValue: '',
+      reply: {},
+      replyCount: '',
+      replyChance: ''
     }
   },
   onLoad(options) {
@@ -99,13 +103,88 @@ export default {
     this.getProductDetailFromApi()
   },
   methods: {
-    showToast(title,type,url) {
+    onAddToCart() {
+      console.log('添加到购物车')
+      // this.descartes([['a','b','c'],['1','2']])
+      let names = ["iPhone X", "iPhone XS"]
+
+      let colors = ["黑色", "白色"]
+
+      let storages = ["64g", "256g"]
+      for (let i = 0; i < names.length; i++) {
+        let tempArr = []
+        let temp = {}
+        tempArr.push(
+
+        )
+      }
+    },
+
+    descartes(list) {
+      // parent 上一级索引;count 指针计数
+      let point = {}; // 准备移动指针
+      let result = []; // 准备返回数据
+      let pIndex = null; // 准备父级指针
+      let tempCount = 0; // 每层指针坐标
+      let temp = []; // 组装当个 sku 结果
+
+      // 一：根据参数列生成指针对象
+      for (let index in list) {
+        if (typeof list[index] === 'object') {
+          point[index] = {parent: pIndex, count: 0};
+          pIndex = index;
+        }
+      }
+      debugger
+      console.log('添加到购物车')
+      // 单维度数据结构直接返回
+      if (pIndex === null) {
+        return list;
+      }
+
+
+      // 动态生成笛卡尔积
+      while (true) {
+        // 二：生成结果
+        let index;
+        for (index in list) {
+          tempCount = point[index].count;
+          temp.push(list[index][tempCount]);
+        }
+        // 压入结果数组
+        result.push(temp);
+        temp = [];
+
+        // 三：检查指针最大值问题，移动指针
+        while (true) {
+          if (point[index].count + 1 >= list[index].length) {
+            point[index].count = 0;
+            pIndex = point[index].parent;
+            if (pIndex === null) {
+              return result;
+            }
+            // 赋值 parent 进行再次检查
+            index = pIndex;
+          } else {
+            point[index].count++;
+            break;
+          }
+        }
+      }
+    },
+
+
+    onShoppingNow() {
+      console.log('立即购买')
+    },
+    showToast(title, type, url) {
       this.$refs.uToast.show({
         title,
         type,
         url
       })
     },
+
     getProductDetailFromApi() {
       uni.showLoading({
         title: '加载中',
@@ -119,16 +198,17 @@ export default {
         Object.assign(params, {uid: this.userInfo.uid})
       }
       getProductDetail(this.id, params).then(res => {
-        if(res.data){
+        if (res.data) {
           this.storeInfo = res.data.storeInfo
           this.storeInfo.description = this.storeInfo.description.replace(/\<img/gi, '<img style="max-width:100%;height:auto;"')
           this.reply = res.data.reply
           this.replyCount = res.data.replyCount
-        }else{
-          this.showToast('出错了','error',null)
+          this.replyChance = res.data.replyChance
+        } else {
+          this.showToast('出错了', 'error', null)
         }
       }).catch((error) => {
-        this.showToast(error.data.msg,'error',null)
+        this.showToast(error.data.msg, 'error', null)
       }).finally(() => {
         uni.hideLoading()
       })
@@ -145,41 +225,47 @@ export default {
 }
 
 @supports (bottom: env(safe-area-inset-bottom)) {
-  .page-container{
+  .page-container {
     padding-bottom: calc(#{$footerHeight} + env(safe-area-inset-bottom));
   }
 }
+
 .page-container {
   position: relative;
   min-height: 100%;
 }
+
 .page-content-with-padding {
   background-color: white;
   padding: 20rpx 16rpx;
 }
+
 .text-vip-price {
   color: red;
   font-size: 44rpx;
 }
+
 .text-product-name {
   font-size: 32rpx;
   font-weight: bold;
   margin-top: 8rpx;
 }
+
 .text-product-info {
   font-size: 24rpx;
   margin-top: 25rpx;
   color: #82848f;
 }
+
 .product-details {
   width: 100% !important;
 }
 
-.submit-bar{
+.submit-bar {
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  right:0;
+  right: 0;
 }
 </style>
