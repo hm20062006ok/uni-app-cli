@@ -172,12 +172,12 @@ export default {
   methods: {
     onAllShopSelected(value){
       console.log('allShopSelected',value)
-      this.carList.map(shop =>{
-        shop.selected = value
-        shop.glist.map(item => {
-          item.selected = value
-        })
-      })
+      // this.carList.map(shop =>{
+      //   shop.selected = value
+      //   shop.glist.map(item => {
+      //     item.selected = value
+      //   })
+      // })
     },
     delItem(index, shopIndex){
       //删除当前项

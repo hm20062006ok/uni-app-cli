@@ -38,7 +38,7 @@ export default {
       navBarTextColor: 'white',
       firstList: [
         {
-          id:0,
+          id:14434,
           image: '/static/mock/1024.png',
           storeName: 'iPhone 12 Pro Max',
           vipPrice: 9999,

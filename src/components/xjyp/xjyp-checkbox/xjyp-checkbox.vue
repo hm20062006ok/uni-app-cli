@@ -8,6 +8,7 @@
 <script>
 export default {
   name: 'xjyp-checkbox',
+  //TODO event 改为 input
   model: {
     prop: 'checked',
     event: 'update:checked'

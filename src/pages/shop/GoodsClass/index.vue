@@ -8,25 +8,22 @@
     </view>
     <view class="u-menu-wrap">
       <scroll-view scroll-y scroll-with-animation class="u-tab-view menu-scroll-view" :scroll-top="scrollTop"
-                   :show-scrollbar="false"
                    :scroll-into-view="itemId">
-        <view v-for="(item,index) in tabbar" :key="index" class="u-tab-item"
-              :class="[current == index ? 'u-tab-item-active' : '']"
+        <view v-for="(item,index) in tabbar" :key="index" class="u-tab-item" :class="[current == index ? 'u-tab-item-active' : '']"
               @tap.stop="swichMenu(index)">
-          <text class="u-line-1">{{ item.cateName }}</text>
+          <text class="u-line-1">{{item.name}}</text>
         </view>
       </scroll-view>
-      <scroll-view :scroll-top="scrollRightTop" :show-scrollbar="false" scroll-y scroll-with-animation class="right-box"
-                   @scroll="rightScroll">
+      <scroll-view :scroll-top="scrollRightTop" scroll-y scroll-with-animation class="right-box" @scroll="rightScroll">
         <view class="page-view">
           <view class="class-item" :id="'item' + index" v-for="(item , index) in tabbar" :key="index">
             <view class="item-title">
-              <text>{{ item.cateName }}</text>
+              <text>{{item.name}}</text>
             </view>
             <view class="item-container">
-              <view class="thumb-box" v-for="(item1, index1) in item.children" :key="index1" @tap="cateOnTap(item1)">
-                <image class="item-menu-image" :src="item1.pic" mode=""></image>
-                <view class="item-menu-name">{{ item1.cateName }}</view>
+              <view class="thumb-box" v-for="(item1, index1) in item.foods" :key="index1">
+                <image class="item-menu-image" :src="item1.icon" mode=""></image>
+                <view class="item-menu-name">{{item1.name}}</view>
               </view>
             </view>
           </view>
@@ -36,8 +33,7 @@
   </view>
 </template>
 <script>
-import classifyData from './classify.data.js';
-
+import classifyData from '@/common/classify.data.js';
 export default {
   data() {
     return {
@@ -62,21 +58,14 @@ export default {
     this.getMenuItemTop()
   },
   methods: {
-    cateOnTap(item){
-      uni.showToast({
-        title: item.cateName,
-        icon: 'none'
-      })
-      console.log('分类', item)
-    },
     // 点击左边的栏目切换
     async swichMenu(index) {
-      if (this.arr.length == 0) {
+      if(this.arr.length == 0) {
         await this.getMenuItemTop();
       }
       if (index == this.current) return;
       this.scrollRightTop = this.oldScrollTop;
-      this.$nextTick(function () {
+      this.$nextTick(function(){
         this.scrollRightTop = this.arr[index];
         this.current = index;
         this.leftMenuStatus(index);
@@ -134,11 +123,11 @@ export default {
         let selectorQuery = uni.createSelectorQuery();
         selectorQuery.selectAll('.class-item').boundingClientRect((rects) => {
           // 如果节点尚未生成，rects值为[](因为用selectAll，所以返回的是数组)，循环调用执行
-          if (!rects.length) {
+          if(!rects.length) {
             setTimeout(() => {
               this.getMenuItemTop();
             }, 10);
-            return;
+            return ;
           }
           rects.forEach((rect) => {
             // 这里减去rects[0].top，是因为第一项顶部可能不是贴到导航栏(比如有个搜索框的情况)
@@ -151,11 +140,11 @@ export default {
     // 右边菜单滚动
     async rightScroll(e) {
       this.oldScrollTop = e.detail.scrollTop;
-      if (this.arr.length == 0) {
+      if(this.arr.length == 0) {
         await this.getMenuItemTop();
       }
-      if (this.timer) return;
-      if (!this.menuHeight) {
+      if(this.timer) return ;
+      if(!this.menuHeight) {
         await this.getElRect('menu-scroll-view', 'menuHeight');
       }
       setTimeout(() => { // 节流
@@ -168,7 +157,7 @@ export default {
           // 如果不存在height2，意味着数据循环已经到了最后一个，设置左边菜单为最后一项即可
           if (!height2 || scrollHeight >= height1 && scrollHeight < height2) {
             this.leftMenuStatus(i);
-            return;
+            return ;
           }
         }
       }, 10)
@@ -177,15 +166,6 @@ export default {
 }
 </script>
 
-<style>
-::-webkit-scrollbar {
-  display: none;
-  width: 0 !important;
-  height: 0 !important;
-  -webkit-appearance: none;
-  background: transparent;
-}
-</style>
 <style lang="scss" scoped>
 .u-wrap {
   height: calc(100vh);

@@ -24,8 +24,8 @@
 
 
     <!-- 规格 -->
-    <view class="page-content-with-padding u-flex u-row-between u-margin-top-20">
-      <view>
+    <view class="page-content-with-padding u-flex u-row-between u-margin-top-20" @click="showWindow = true">
+      <view class="u-flex">
         <text>{{ attrText }}</text>
         <text>{{ attrValue }}</text>
       </view>
@@ -59,6 +59,12 @@
                        @onShoppingNow="onShoppingNow"></xjyp-submit-bar>
     </view>
 
+    <BottomWindow v-model="showWindow">
+      <template>
+        <!-- TODO  规格内容-->
+        <view>21231</view>
+      </template>
+    </BottomWindow>
     <!-- Toast-->
     <view>
       <u-toast ref="uToast"/>
@@ -67,12 +73,16 @@
 </template>
 <script>
 import ProductSwiper from "./components/ProductSwiper";
+import BottomWindow from "@/components/xjyp/xjyp-bottom-window/xjyp-bottom-window.vue";
 import {getProductDetail} from '@/api/store'
 import {mapGetters} from 'vuex'
 
 export default {
   name: 'GoodDetails',
-  components: {ProductSwiper},
+  components: {
+    ProductSwiper,
+    BottomWindow
+  },
   computed: {
     ...mapGetters(['isLogin', 'location', 'userInfo']),
     attrText() {
@@ -81,6 +91,9 @@ export default {
   },
   data() {
     return {
+      count: 1,
+      msg: '',
+      showWindow: false,
       isFavourite: false,
       cartNumber: 0,
       storeInfo: {

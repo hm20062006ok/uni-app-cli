@@ -37,7 +37,9 @@ export default {
     }
   },
   data(){
-
+    return {
+      
+    }
   },
   methods: {
     favoriteChange(){
