@@ -1,45 +1,30 @@
 <template>
 <!-- TODO 太丑，自己实现选择框 -->
   <checkbox-group @change="checkboxChange">
-    <checkbox value="checkboxValue"  :checked="shouldChecked" />
+    <checkbox value="1"  :checked="isChecked" style="border-radius: 50%"/>
     <slot/>
   </checkbox-group>
 </template>
 <script>
 export default {
   name: 'xjyp-checkbox',
-  //TODO event 改为 input
-  model: {
-    prop: 'checked',
-    event: 'update:checked'
-  },
   data() {
     return {
-      initialValue:this.checked,
+      isChecked:this.value,
     }
   },
   props: {
-    checked: Boolean
-  },
-  computed: {
-    shouldChecked:{
-      get(){
-        return this.checked
-      },
-      set(){
-
-      }
-    }
+    value: Boolean
   },
   methods: {
     checkboxChange(event){
+      // 实际应该判断 event.detail.value.includes("1")
       if(event.detail.value.length > 0){
-        this.$emit('update:checked',true)
+        this.$emit('input',true)
         this.$emit('onChange', true)
       }else{
-        this.shouldChecked = false
+        this.$emit('input',false)
         this.$emit('onChange', false)
-        this.$emit('update:checked',false)
       }
     }
   }

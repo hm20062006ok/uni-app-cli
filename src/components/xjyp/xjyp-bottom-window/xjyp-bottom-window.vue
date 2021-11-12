@@ -13,10 +13,6 @@
 <script>
 export default {
   name: "xjyp-bottom-window",
-  model: {
-    prop: 'value',
-    event: 'input'
-  },
   props: {
     value: Boolean
   },
