@@ -3,24 +3,22 @@
     <view style="padding: 0 10rpx">
       总价： {{ total }}
       总数： {{ count }}
-      <xjyp-checkbox v-model="allShopSelected" @onChange="onAllShopSelected($event)">全选</xjyp-checkbox>
+      <xjyp-checkbox v-model="allShopSelected">全选</xjyp-checkbox>
     </view>
     <view class="store-list">
       <view class="store-item" v-for="(shop, index) in carList" :key="index">
         <view class="store-item-head">
           <xjyp-checkbox  v-model="shop.selected" @onChange="shopChange($event, shop)"></xjyp-checkbox>
-          <view>Icon</view>
+          <u-icon name="bag-fill" color="#2979ff" size="40"></u-icon>
           <text> {{ shop.title }}</text>
         </view>
         <view class="store-item-product-list">
           <view class="product-item" v-for="(good, shopIndex) in shop.glist" :key="shopIndex">
             <del_slide-left :item="good"  :data_transit="{index:shopIndex,item:good}"  @delItem="delItem(index, shopIndex)" style="width: 100%">
               <view class="carrier">
-                <view >
+                <view>
                   <xjyp-checkbox v-model="good.selected" @onChange="itemChange($event, shop)"></xjyp-checkbox>
-                </view>
-                <view class="product-pic">
-                  <image :src="good.img" style="width: 100%;height: 100%"/>
+                  <image :src="good.img" style="width: 100rpx;height: 100rpx"/>
                 </view>
                 <view class="product-item-right">
                   <view> {{ good.name }}</view>
@@ -48,13 +46,25 @@ export default {
   components: {Del_slideLeft},
   data() {
     return {
-      carList: [],
+      carList: [
+        {
+          selected:Boolean,
+          gList:[
+            {selected:Boolean}
+          ]
+        }
+      ]
     }
   },
+  // watch: {
+  //   allShopSelected: {
+  //     handler: 'updateShopAndItemStatus',
+  //     immediate: true
+  //   }
+  // },
   mounted() {
-    let that = this
-    setTimeout(function (){
-      that.carList = [
+    setTimeout(() => {
+      this.carList = [
         {
           shopId: 1,
           title: "天猫超市",
@@ -129,6 +139,18 @@ export default {
     }, 0)
   },
   computed: {
+    allShopSelected:{
+      get() {
+        return this.carList.every((shop) => {
+          return shop.selected
+        })
+      },
+      set(value) {
+        this.carList.map((shop) => {
+          shop.selected = value
+        })
+      }
+    },
     count(){
       return this.carList.reduce((sum, shop) => {
         return sum + shop.glist.reduce((shopCount, item) => {
@@ -153,31 +175,36 @@ export default {
         return sum
       }, 0)
     },
-    allShopSelected:{
-      get(){
-        if(this.carList.length <= 0){
-          return false
-        }
-        return this.carList.every(shop => {
-          return shop.glist.every(item => {
-            return item.selected
-          })
-        })
-      },
-      set(value){
-
-      }
-    }
+    // allShopSelected:{
+    //   get(){
+        // if(this.carList.length <= 0){
+        //   return false
+        // }
+        // return this.carList.every(shop => {
+        //   return shop.glist.every(item => {
+        //     return item.selected
+        //   })
+        // })
+      // },
+      // set(value){
+      //
+      // }
+    // }
   },
   methods: {
+    updateShopAndItemStatus(newValue){
+      setTimeout(() => {
+        this.carList.map(shop =>{
+          shop.selected = newValue
+          shop.glist.map(item => {
+            item.selected = newValue
+          })
+        })
+      },100)
+    },
     onAllShopSelected(value){
       console.log('allShopSelected',value)
-      // this.carList.map(shop =>{
-      //   shop.selected = value
-      //   shop.glist.map(item => {
-      //     item.selected = value
-      //   })
-      // })
+
     },
     delItem(index, shopIndex){
       //删除当前项
@@ -198,9 +225,9 @@ export default {
     increase(count){
       console.log('increase',count)
     },
-    shopChange(allSelected, shop) {
+    shopChange(currentShopSelectStatus, shop) {
       shop.glist.map(item => {
-        item.selected = allSelected
+        item.selected = currentShopSelectStatus
       })
     },
     itemChange(itemSelected, shop) {
@@ -236,10 +263,10 @@ export default {
       .product-item {
         //width: calc(96%);
         width: 100%;
-        height: calc(22vw + 40rpx);
+        //height: calc(22vw + 40rpx);
         margin: 5rpx 0;
         border-radius: 15rpx;
-        box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+        box-shadow: 0rpx 5rpx 20rpx 4rpx rgba(0, 0, 0, 0.1);
         display: flex;
         align-items: center;
         position: relative;
@@ -248,159 +275,13 @@ export default {
         border: 0;
 
         .carrier {
-
-          //background-color: #fff;
-          //position: absolute;
+          justify-content: space-between;
           width: 100%;
-          //padding: 0 0;
-          height: calc(22vw + 40rpx);
-          //z-index: 3;
-          //display: flex;
-          //align-items: center;
-
-          //.checkbox-box {
-          //  padding-left: 20upx;
-          //  flex-shrink: 0;
-          //  height: 22vw;
-          //  margin-right: 20upx;
-          //}
-
-          //.goods-info {
-          //  width: 100%;
-          //  display: flex;
-          //  padding-right: 20upx;
-          //
-          //  .img {
-          //    width: 22vw;
-          //    height: 22vw;
-          //    border-radius: 10upx;
-          //    overflow: hidden;
-          //    flex-shrink: 0;
-          //    margin-right: 10upx;
-          //
-          //    image {
-          //      width: 22vw;
-          //      height: 22vw;
-          //    }
-          //  }
-          //
-          //  .info {
-          //    width: 100%;
-          //    height: 22vw;
-          //    overflow: hidden;
-          //    display: flex;
-          //    flex-wrap: wrap;
-          //    position: relative;
-          //
-          //    .title {
-          //      width: 100%;
-          //      font-size: $font-base;
-          //      line-height: 40upx;
-          //      height: 80upx;
-          //    }
-          //
-          //    .price-number {
-          //      position: absolute;
-          //      width: 100%;
-          //      bottom: 0upx;
-          //      display: flex;
-          //      justify-content: space-between;
-          //      align-items: flex-end;
-          //      font-size: 28upx;
-          //      height: 60upx;
-          //
-          //      .remark {
-          //        font-size: $font-sm;
-          //        color: $font-color-disabled;
-          //      }
-          //      .number {
-          //        display: flex;
-          //        justify-content: center;
-          //        align-items: flex-end;
-          //
-          //        .input {
-          //          width: 60upx;
-          //          height: 60upx;
-          //          margin: 0 10upx;
-          //          background-color: #f3f3f3;
-          //
-          //          input {
-          //            width: 60upx;
-          //            height: 60upx;
-          //            display: flex;
-          //            justify-content: center;
-          //            align-items: center;
-          //            text-align: center;
-          //            font-size: 26upx;
-          //          }
-          //        }
-          //
-          //        .sub,
-          //        .add {
-          //          width: 45upx;
-          //          height: 45upx;
-          //          background-color: #f3f3f3;
-          //          border-radius: 5upx;
-          //
-          //          .icon {
-          //            font-size: 22upx;
-          //            width: 45upx;
-          //            height: 45upx;
-          //            display: flex;
-          //            justify-content: center;
-          //            align-items: center;
-          //          }
-          //        }
-          //      }
-          //    }
-          //  }
-          //
-          //  .state-wrapper {
-          //    width: 100%;
-          //    display: flex;
-          //    justify-content: space-between;
-          //
-          //    .state {
-          //      margin: 5upx 20upx;
-          //      height: 45upx;
-          //      background-color: $font-color-light;
-          //      color: $color-white;
-          //      padding: 5upx 20upx;
-          //      font-size: $font-sm;
-          //      border-radius: 6upx;
-          //    }
-          //
-          //    .spec {
-          //      font-size: $font-sm;
-          //      background-color: #f3f3f3;
-          //      color: #a7a7a7;
-          //      padding: 5upx 15upx;
-          //      border-radius: 20upx;
-          //      margin-bottom: 20vw;
-          //    }
-          //  }
-          //}
+          display: flex;
+          align-items: center;
         }
-
       }
     }
   }
 }
-
-//.product-pic {
-//  width: 150rpx;
-//  height: 150rpx;
-//  background-color: red;
-//}
-//
-//.product-item-right {
-//  display: flex;
-//  flex-direction: column;
-//}
-//
-//.product-item-right-bottom {
-//  display: flex;
-//  flex-direction: row;
-//  justify-content: space-between;
-//}
 </style>

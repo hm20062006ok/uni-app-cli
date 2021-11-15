@@ -1,26 +1,19 @@
 <template>
 	<view>
 		<view class="box-slideLeft" >
-			<view class="touch-item touch-slideLeft " @touchstart="touchS" @touchmove="touchM" @touchend="touchE"  :style="item_show.txtStyle">
+			<view class="touch-item touch-slideLeft " @touchstart.prevent.stop="touchS" @touchmove.prevent.stop="touchM" @touchend.prevent.stop="touchE"  :style="item_show.txtStyle">
 				<slot />
 			</view>
-			
 			<view class="touch-item del-box-touch-slideLeft cf-shuCenter"  @click="delItem(item_show)">
-				<view class="iconfont icon-shanchu"></view>
+        <u-icon name="trash" color="#ffffff" size="44"></u-icon>
 			</view>
-
 		</view>
 	</view>
 </template>
 
 <script>
-	
 	export default {
-		components: {
-
-		},
 		props: {
-			
 			data_transit: {
 				type: Object,
 				default () {
@@ -35,13 +28,8 @@
 				}
 			},
 		},
-		computed: {
-
-		},
-		
 		data() {
 			return {
-				
 				item_show : {},
 				delBtnWidth: 60, //删除按钮宽度单位（rpx）
 				startX: '',
@@ -73,16 +61,16 @@
 			},
 			touchS: function(e) {
 				let that = this;
-				
+
 				if (e.touches.length == 1) {
 					//设置触摸起始点水平方向位置
 					this.startX = e.touches[0].clientX
-					
+
 				}
 			},
 			touchM: function(e) {
 				let that = this;
-				
+
 				if (e.touches.length == 1) {
 					//手指移动时水平方向位置
 					var moveX = e.touches[0].clientX;
@@ -100,9 +88,9 @@
 						}
 					}
 					//获取手指触摸的是哪一项
-					
+
 					that.item_show.txtStyle = txtStyle;
-					
+
 				}
 			},
 			touchE: function(e) {
@@ -117,25 +105,23 @@
 					var txtStyle = disX > delBtnWidth / 2 ? "left:-" + delBtnWidth + "px" : "left:0px";
 					//获取手指触摸的是哪一项
 					that.item_show.txtStyle = txtStyle;
-					
+
 				}
 			},
-			
+
 		}
 
 	}
 </script>
 
 <style lang="scss">
-	@import './iconfont.css';//便于有删除图标
-	
 	.box-slideLeft {
 		view {
 			box-sizing: border-box;
 		}
 		position: relative;
 		overflow: hidden;
-		
+
 		.touch-item {
 			position: absolute;
 			top: 0;
@@ -144,7 +130,7 @@
 			// border-radius: 10px;
 			overflow: hidden;
 		}
-		
+
 		.touch-slideLeft {
 			position: relative;
 			width: 100%;
@@ -170,16 +156,14 @@
 		.icon-shanchu{
 			font-size: 44upx;
 		}
-		
 		.cf-shuCenter{
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			
 		}
 	}
 
-	
+
 </style>
 

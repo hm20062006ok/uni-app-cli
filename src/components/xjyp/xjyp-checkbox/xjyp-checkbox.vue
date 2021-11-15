@@ -1,16 +1,22 @@
 <template>
 <!-- TODO 太丑，自己实现选择框 -->
   <checkbox-group @change="checkboxChange">
-    <checkbox value="1"  :checked="isChecked" style="border-radius: 50%"/>
+    <checkbox value="1"  :checked="isChecked"/>
     <slot/>
   </checkbox-group>
 </template>
 <script>
 export default {
   name: 'xjyp-checkbox',
-  data() {
+  data(){
     return {
-      isChecked:this.value,
+      isChecked:this.value
+    }
+  },
+  watch: {
+    value(newValue) {
+      this.isChecked = newValue;
+      this.$emit('onChange', newValue)
     }
   },
   props: {
