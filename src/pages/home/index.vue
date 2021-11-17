@@ -7,7 +7,6 @@
     <view>
       <category-tabs-component :content="content"></category-tabs-component>
     </view>
-<!--    <duihuan-pinpai-zhibo  :detail="duihuan"></duihuan-pinpai-zhibo>-->
     <dui-huan-zhi-bo-pin-pai :detail="duihuan"></dui-huan-zhi-bo-pin-pai>
     <view>
       <category-tabs-component :content="content1"></category-tabs-component>
@@ -187,6 +186,7 @@ export default {
   methods: {},
   onPageScroll(e) {
     let h = this.$customBarHeight + this.$customStatusBarHeight;
+    //TODO 使用 IntersectionObserver实现
     if (e.scrollTop > h) {
       this.navBarBgColor = 'white'
       this.navBarTextColor = 'black'
