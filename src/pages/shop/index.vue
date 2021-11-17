@@ -32,7 +32,6 @@
                 </view>
               </view>
             </del_slide-left>
-
           </view>
         </view>
       </view>

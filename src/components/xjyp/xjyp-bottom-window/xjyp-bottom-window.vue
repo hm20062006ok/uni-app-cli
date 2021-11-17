@@ -31,10 +31,14 @@ export default {
 
 <style scoped>
 .close-container {
-  padding: 10rpx 12rpx 0 0;
-  width: 100%;
+  float: right;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
   display: flex;
   justify-content: flex-end;
+}
+.close-container:after {
+  /*clear:both;*/
 }
 .window {
   position: fixed;

@@ -27,7 +27,7 @@
     <view class="page-content-with-padding u-flex u-row-between u-margin-top-20" @click="showWindow = true">
       <view class="u-flex">
         <text>{{ attrText }}</text>
-        <text>{{ attrValue }}</text>
+        <text class="u-line-1">{{ attrValue }}</text>
       </view>
       <u-icon name="arrow-right"></u-icon>
     </view>
@@ -61,8 +61,46 @@
 
     <BottomWindow v-model="showWindow">
       <template>
-        <!-- TODO  规格内容-->
-        <view>21231</view>
+        <view class="u-flex-col u-margin-top-20 u-padding-left-20 u-padding-right-20" style="width: 100%">
+          <!-- 商品图 选中商品名  价格 库存-->
+          <view class="u-flex">
+            <image class="product-img" :src="currentSku.img" ></image>
+            <view class="u-flex-col u-margin-left-20 u-flex-1 u-line-1">
+              <text class="u-font-xl u-line-1">{{ currentSku.title}}</text>
+              <view class="u-flex u-margin-top-40">
+                <view class="u-font-xl">¥{{currentSku.price}}</view>
+                <view class="u-font-sm u-tips-color u-margin-left-10">库存：{{currentSku.stock}}</view>
+              </view>
+            </view>
+          </view>
+
+          <!-- sku-->
+          <view class="u-flex-col" style="max-height: 30vh;overflow: scroll;">
+            <u-tag v-for="(item) in sku"
+                   @click="selectSKU(item)"
+                   border-color="#000000"
+                   class="u-margin-top-16"
+                   :key="item.id"
+                   :text="item.title"
+                   :bg-color="currentSku.id === item.id ? 'red': 'white'"
+                   :color="currentSku.id === item.id ? 'white': 'black'"
+                   :mode="currentSku.id === item.id ? 'dark': 'plain'" >
+            </u-tag>
+          </view>
+
+          <!--  数量选择-->
+          <view class="u-flex-col u-margin-top-20">
+            <view class="u-font-xl u-tips-color">数量</view>
+            <xjyp-number-input class="u-margin-top-20" v-model="quantity" max="9" min="1"></xjyp-number-input>
+          </view>
+
+          <!-- 加入购物车 ， 理解购买-->
+          <view class="btn-group u-row-between ">
+            <view class="cart btn u-line-1" @click="onAddToCart()">加入购物车</view>
+            <view class="buy btn u-line-1" @click="onShoppingNow()">立即购买</view>
+          </view>
+
+        </view>
       </template>
     </BottomWindow>
     <!-- Toast-->
@@ -86,11 +124,26 @@ export default {
   computed: {
     ...mapGetters(['isLogin', 'location', 'userInfo']),
     attrText() {
-      return this.attrValue === '' ? '请选择：' : '已选择：'
+      return this.attrValue === '' ? '请选择：' : '已选：'
     }
   },
   data() {
     return {
+      // 多规格id 1266
+      quantity:1,
+      sku:[
+        {id:0, title:'加长夜用卫生巾（360mm*6片/包*8包）加长夜用卫生巾（360mm*6片/包*8包）加长夜用卫生巾（360mm*6片/包*8包）', price:31.90, stock: 1933, img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/25e42c26f4314987a5a4484e2da94d57'},
+        {id:1, title:'护垫卫生巾（160mm*20片/包*8包）',price:32.90, stock: 1934,img: 'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:2, title:'日用卫生巾（245mm*10片/包*50包）',price:33.90, stock: 1935,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:3, title:'棉柔夜用卫生巾（290mm*8片/包*8包）',price:34.90, stock: 1936,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:4, title:'加长夜用卫生巾（360mm*6片/包*50包）',price:35.90, stock: 1937,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:9, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:5, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:6, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:7, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+        {id:8, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+      ],
+      currentSku: {id:0, title:'加长夜用卫生巾（360mm*6片/包*8包）', price:31.90, stock: 1933,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
       count: 1,
       msg: '',
       showWindow: false,
@@ -115,7 +168,13 @@ export default {
     console.log('onLoad', this.id)
     this.getProductDetailFromApi()
   },
+  mounted() {
+    this.attrValue = this.currentSku.title
+  },
   methods: {
+    selectSKU(sku){
+      this.currentSku = sku
+    },
     onAddToCart() {
       console.log('添加到购物车')
       // this.descartes([['a','b','c'],['1','2']])
@@ -214,6 +273,7 @@ export default {
         if (res.data) {
           this.storeInfo = res.data.storeInfo
           this.storeInfo.description = this.storeInfo.description.replace(/\<img/gi, '<img style="max-width:100%;height:auto;"')
+
           this.reply = res.data.reply
           this.replyCount = res.data.replyCount
           this.replyChance = res.data.replyChance
@@ -229,8 +289,35 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped rel="stylesheet/scss">
 
+.btn-group {
+  width: 80%;
+  margin:40rpx auto 0 auto;
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  .btn {
+    line-height: 66rpx;
+    padding: 0 30rpx;
+    border-radius: 36rpx;
+    color: #ffffff;
+  }
+  .cart {
+    background-color: #ed3f14;
+    margin-right: 30rpx;
+  }
+  .buy {
+    background-color: #ff7900;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.product-img {
+  width: 160rpx;
+  height: 160rpx;
+}
 @supports (bottom: constant(safe-area-inset-bottom)) {
   .page-container {
     padding-bottom: calc(#{$footerHeight} + constant(safe-area-inset-bottom));
