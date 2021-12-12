@@ -22,7 +22,7 @@
             </view>
             <view class="item-container">
               <view class="thumb-box" v-for="(item1, index1) in item.foods" :key="index1">
-                <image class="item-menu-image" :src="item1.icon" mode=""></image>
+                <image class="item-menu-image" :src="item1.icon" mode="widthFix"></image>
                 <view class="item-menu-name">{{item1.name}}</view>
               </view>
             </view>
@@ -276,7 +276,8 @@ export default {
 }
 
 .thumb-box {
-  width: 33.333333%;
+  //width: 33.333333%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,7 +286,8 @@ export default {
 }
 
 .item-menu-image {
-  width: 120rpx;
-  height: 120rpx;
+  width: 100%;
+  //width: 120rpx;
+  //height: 120rpx;
 }
 </style>

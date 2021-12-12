@@ -14,6 +14,14 @@ const userRouter = [
         meta: {
             title: '我的订单'
         }
+    },
+    {
+        path: '/pages/user/MyTeam/index',
+        aliasPath: "/pages/user/MyTeam/index",
+        name: 'MyTeam',
+        meta: {
+            title: '我的团队'
+        }
     }
 ]
 

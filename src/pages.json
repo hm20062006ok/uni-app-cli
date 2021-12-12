@@ -49,6 +49,9 @@
     },
     {
       "path": "pages/shop/GoodDetails/index"
+    },
+    {
+      "path": "pages/user/MyTeam/index"
     }
   ],
   "globalStyle": {

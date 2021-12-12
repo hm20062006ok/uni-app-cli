@@ -94,7 +94,7 @@
             <xjyp-number-input class="u-margin-top-20" v-model="quantity" max="9" min="1"></xjyp-number-input>
           </view>
 
-          <!-- 加入购物车 ， 理解购买-->
+          <!-- 加入购物车 ，立即购买-->
           <view class="btn-group u-row-between ">
             <view class="cart btn u-line-1" @click="onAddToCart()">加入购物车</view>
             <view class="buy btn u-line-1" @click="onShoppingNow()">立即购买</view>
