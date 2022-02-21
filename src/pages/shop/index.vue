@@ -45,14 +45,7 @@ export default {
   components: {Del_slideLeft},
   data() {
     return {
-      carList: [
-        {
-          selected:Boolean,
-          gList:[
-            {selected:Boolean}
-          ]
-        }
-      ]
+      carList: []
     }
   },
   // watch: {
@@ -61,6 +54,9 @@ export default {
   //     immediate: true
   //   }
   // },
+  onTabItemTap(){
+    console.log('onTabItemTap click in shopIndex')
+  },
   mounted() {
     setTimeout(() => {
       this.carList = [
@@ -135,7 +131,7 @@ export default {
           ]
         }
       ]
-    }, 0)
+    }, 1000)
   },
   computed: {
     allShopSelected:{
@@ -151,6 +147,10 @@ export default {
       }
     },
     count(){
+      if(this.carList.length < 0 ){
+        debugger
+        return 0;
+      }
       return this.carList.reduce((sum, shop) => {
         return sum + shop.glist.reduce((shopCount, item) => {
           if (item.selected) {

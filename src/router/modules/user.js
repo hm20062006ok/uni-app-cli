@@ -22,6 +22,14 @@ const userRouter = [
         meta: {
             title: '我的团队'
         }
+    },
+    {
+        path: '/pages/user/Login/index',
+        aliasPath: "/pages/user/Login/index",
+        name: 'Login',
+        meta: {
+            title: '登录'
+        }
     }
 ]
 

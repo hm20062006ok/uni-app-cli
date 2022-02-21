@@ -1,10 +1,12 @@
 <template>
-$END$
+<view>
+  登录
+</view>
 </template>
 
 <script>
 export default {
-name: "index"
+  name: "loginIndex"
 }
 </script>
 

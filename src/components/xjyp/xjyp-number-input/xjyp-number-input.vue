@@ -55,7 +55,7 @@ export default {
         return
       }
       this.$emit('input', value)
-      // this.$emit('onIncrease', value)
+      this.$emit('onIncrease', value)
     },
     decrease(){
       let value = this.forInputValue - 1

@@ -54,6 +54,9 @@ export default {
   onLoad() {
 
   },
+  onTabItemTap(){
+    console.log('onTabItemTap click in GoodsClass')
+  },
   onReady() {
     this.getMenuItemTop()
   },

@@ -29,6 +29,7 @@ const vuexStore = new Vuex.Store({
         isAuthorizationPage: state => state.isAuthorizationPage,
         isAuthorization: state => state.isAuthorization,
         token: state => state.token,
+        // !! 转换为布尔值
         isLogin: state => !!state.token,
         userInfo: state => state.userInfo || {},
         location: state => state.location,

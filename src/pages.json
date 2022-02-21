@@ -52,6 +52,9 @@
     },
     {
       "path": "pages/user/MyTeam/index"
+    },
+    {
+      "path": "pages/user/Login/index"
     }
   ],
   "globalStyle": {
