@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="box-slideLeft" >
-			<view class="touch-item touch-slideLeft " @touchstart.prevent.stop="touchS" @touchmove.prevent.stop="touchM" @touchend.prevent.stop="touchE"  :style="item_show.txtStyle">
+			<view class="touch-item touch-slideLeft " @touchstart.prevent="touchS" @touchmove.prevent="touchM" @touchend.prevent="touchE"  :style="item_show.txtStyle">
 				<slot />
 			</view>
 			<view class="touch-item del-box-touch-slideLeft cf-shuCenter"  @click="delItem(item_show)">
@@ -60,8 +60,6 @@
 				this.$emit('delItem', data);
 			},
 			touchS: function(e) {
-				let that = this;
-
 				if (e.touches.length == 1) {
 					//设置触摸起始点水平方向位置
 					this.startX = e.touches[0].clientX
@@ -102,9 +100,8 @@
 					var disX = this.startX - endX;
 					var delBtnWidth = this.delBtnWidth;
 					//如果距离小于删除按钮的1/2，不显示删除按钮
-					var txtStyle = disX > delBtnWidth / 2 ? "left:-" + delBtnWidth + "px" : "left:0px";
 					//获取手指触摸的是哪一项
-					that.item_show.txtStyle = txtStyle;
+					that.item_show.txtStyle = disX > delBtnWidth / 2 ? "left:-" + delBtnWidth + "px" : "left:0px";;
 
 				}
 			},
@@ -154,7 +151,7 @@
 			text-align: center;
 		}
 		.icon-shanchu{
-			font-size: 44upx;
+			font-size: 44rpx;
 		}
 		.cf-shuCenter{
 			display: flex;

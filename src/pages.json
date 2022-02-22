@@ -52,6 +52,12 @@
       "style": {
         "navigationBarTitleText": "商品详情"
       }
+    },
+    {
+      "path": "pages/user/MyTeam/index"
+    },
+    {
+      "path": "pages/user/Login/index"
     }
   ],
   "globalStyle": {

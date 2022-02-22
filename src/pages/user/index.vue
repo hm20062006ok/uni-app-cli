@@ -53,7 +53,7 @@
 
     <view class="u-m-t-20">
       <u-cell-group>
-        <u-cell-item icon="star" title="我的推广"></u-cell-item>
+        <u-cell-item icon="star" title="我的推广" @click="gotoMinePage"></u-cell-item>
         <u-cell-item icon="photo" title="地址管理"></u-cell-item>
         <u-cell-item icon="coupon" title="收藏商品"></u-cell-item>
         <u-cell-item icon="heart" title="我的足迹"></u-cell-item>
@@ -81,6 +81,9 @@ export default {
   onLoad() {
   },
   methods: {
+    gotoMinePage(){
+      this.$Router.push({path: '/pages/user/MyTeam/index'})
+    },
     showToast(msg) {
       this.$refs.uToast.show({
         title: msg,

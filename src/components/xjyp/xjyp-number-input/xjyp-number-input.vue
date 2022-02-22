@@ -9,6 +9,11 @@
 import { minimalToast } from '@/utils/toast'
 export default {
   name: 'xjyp-number-input',
+  data(){
+    return {
+      forInputValue: this.value
+    }
+  },
   props: {
     value: Number,
     min: {
@@ -17,37 +22,28 @@ export default {
     },
     max: Number,
   },
-  model: {
-    prop: 'value',
-    event: 'update:value'
-  },
-  computed: {
-    forInputValue: {
-      get() {
-        return this.value
-      },
-      set(v) {
-      }
+  watch: {
+    value(newValue){
+      this.forInputValue = newValue
     }
   },
-
   methods: {
     replaceInput(event) {
       const valueLocal = Number.parseInt(event.target.value);
       if (Number.isInteger(valueLocal)) {
         if (valueLocal < this.min) {
           // TODO i18n
-          this.$emit('update:value', this.min)
+          this.$emit('input', this.min)
           minimalToast(`最少购买${this.min}件`)
           return
         }
         if (valueLocal > this.max) {
           // TODO i18n
-          this.$emit('update:value', this.max)
+          this.$emit('input', this.max)
           minimalToast(`最多购买${this.max}件`)
           return
         }
-        this.$emit('update:value', valueLocal)
+        this.$emit('input', valueLocal)
       }else {
         minimalToast(`只能输入数字`)
       }
@@ -58,7 +54,7 @@ export default {
         minimalToast(`最多购买${this.max}件`)
         return
       }
-      this.$emit('update:value', value)
+      this.$emit('input', value)
       this.$emit('onIncrease', value)
     },
     decrease(){
@@ -67,7 +63,7 @@ export default {
         minimalToast(`最少购买${this.min}件`)
         return
       }
-      this.$emit('update:value', this.forInputValue - 1)
+      this.$emit('input', this.forInputValue - 1)
       this.$emit('onDecrease', this.forInputValue - 1)
     }
   }
