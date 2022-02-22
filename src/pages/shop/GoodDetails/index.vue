@@ -64,11 +64,11 @@
         <view class="u-flex-col u-margin-top-20 u-padding-left-20 u-padding-right-20" style="width: 100%">
           <!-- 商品图 选中商品名  价格 库存-->
           <view class="u-flex">
-            <image class="product-img" :src="currentSku.img" ></image>
+            <image class="product-img" :src="currentSku.image" ></image>
             <view class="u-flex-col u-margin-left-20 u-flex-1 u-line-1">
-              <text class="u-font-xl u-line-1">{{ currentSku.title}}</text>
+              <text class="u-font-xl u-line-1">{{ currentSku.sku}}</text>
               <view class="u-flex u-margin-top-40">
-                <view class="u-font-xl">¥{{currentSku.price}}</view>
+                <view class="u-font-xl">¥{{currentSku.vipPrice}}</view>
                 <view class="u-font-sm u-tips-color u-margin-left-10">库存：{{currentSku.stock}}</view>
               </view>
             </view>
@@ -81,7 +81,7 @@
                    border-color="#000000"
                    class="u-margin-top-16"
                    :key="item.id"
-                   :text="item.title"
+                   :text="item.sku"
                    :bg-color="currentSku.id === item.id ? 'red': 'white'"
                    :color="currentSku.id === item.id ? 'white': 'black'"
                    :mode="currentSku.id === item.id ? 'dark': 'plain'" >
@@ -125,25 +125,17 @@ export default {
     ...mapGetters(['isLogin', 'location', 'userInfo']),
     attrText() {
       return this.attrValue === '' ? '请选择：' : '已选：'
+    },
+    attrValue(){
+      return this.currentSku.sku
     }
   },
   data() {
     return {
       // 多规格id 1266
       quantity:1,
-      sku:[
-        {id:0, title:'加长夜用卫生巾（360mm*6片/包*8包）加长夜用卫生巾（360mm*6片/包*8包）加长夜用卫生巾（360mm*6片/包*8包）', price:31.90, stock: 1933, img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/25e42c26f4314987a5a4484e2da94d57'},
-        {id:1, title:'护垫卫生巾（160mm*20片/包*8包）',price:32.90, stock: 1934,img: 'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:2, title:'日用卫生巾（245mm*10片/包*50包）',price:33.90, stock: 1935,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:3, title:'棉柔夜用卫生巾（290mm*8片/包*8包）',price:34.90, stock: 1936,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:4, title:'加长夜用卫生巾（360mm*6片/包*50包）',price:35.90, stock: 1937,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:9, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:5, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:6, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:7, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-        {id:8, title:'护垫卫生巾（160mm*20片/包*50包）', price:36.90, stock: 1938,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
-      ],
-      currentSku: {id:0, title:'加长夜用卫生巾（360mm*6片/包*8包）', price:31.90, stock: 1933,img:'https://xjyp.oss-cn-guangzhou.aliyuncs.com/xjyp-wx/20210827/98d7052d4c2442b6bc1bb3197570682b'},
+      sku:[],
+      currentSku:{},
       count: 1,
       msg: '',
       showWindow: false,
@@ -157,23 +149,21 @@ export default {
         sales: '',
       },
       id: '',
-      attrValue: '',
       reply: {},
       replyCount: '',
       replyChance: ''
     }
   },
-  mounted() {
-    var a = document.getElementsByClassName('uni-page-head-hd')[0]
-    a.style.display = 'none';
-  },
+
   onLoad(options) {
     this.id = this.$Route.query.id
     console.log('onLoad', this.id)
     this.getProductDetailFromApi()
   },
   mounted() {
-    this.attrValue = this.currentSku.title
+    //TODO  去掉隐藏返回箭头
+    var a = document.getElementsByClassName('uni-page-head-hd')[0]
+    a.style.display = 'none';
   },
   methods: {
     selectSKU(sku){
@@ -211,7 +201,6 @@ export default {
           pIndex = index;
         }
       }
-      debugger
       console.log('添加到购物车')
       // 单维度数据结构直接返回
       if (pIndex === null) {
@@ -277,7 +266,16 @@ export default {
         if (res.data) {
           this.storeInfo = res.data.storeInfo
           this.storeInfo.description = this.storeInfo.description.replace(/\<img/gi, '<img style="max-width:100%;height:auto;"')
-
+          // res.data.procuctValue  是一个对象
+          let skuArr = []
+          Object.keys(res.data.productValue).forEach((key) => {
+            skuArr.push(
+              res.data.productValue[key]
+            )
+          })
+          this.sku = skuArr
+          this.currentSku = this.sku[0]
+          // TODO 使用上面的算法生成
           this.reply = res.data.reply
           this.replyCount = res.data.replyCount
           this.replyChance = res.data.replyChance
