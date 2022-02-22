@@ -48,12 +48,15 @@
       "path": "pages/user/MyOrder/index"
     },
     {
-      "path": "pages/shop/GoodDetails/index"
+      "path": "pages/shop/GoodDetails/index",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
     }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "湘济优品",
+    "navigationBarTitleText": "盟非仓单",
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#F7F7F7",
     "navigationStyle": "default",

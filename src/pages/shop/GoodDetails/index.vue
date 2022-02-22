@@ -110,6 +110,10 @@ export default {
       replyChance: ''
     }
   },
+  mounted() {
+    var a = document.getElementsByClassName('uni-page-head-hd')[0]
+    a.style.display = 'none';
+  },
   onLoad(options) {
     this.id = this.$Route.query.id
     console.log('onLoad', this.id)
